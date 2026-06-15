@@ -70,7 +70,7 @@ export default function Footer() {
         }
         .footer-dropdown-item:hover {
           background: rgba(250, 166, 30, 0.12) !important;
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
         }
       `}</style>
       {/* Scroll to Top button handled globally or statically here */}
@@ -155,7 +155,7 @@ export default function Footer() {
                       aria-expanded={langOpen}
                     >
                       {language === 'English' ? 'English' : language === 'Hindi' ? 'हिंदी (Hindi)' : '日本語 (Japanese)'}
-                      <i className="far fa-chevron-up" style={{ fontSize: '10px', color: '#faa61e' }}></i>
+                      <i className="far fa-chevron-up" style={{ fontSize: '10px', color: 'var(--tp-theme-primary)' }}></i>
                     </button>
                     <ul className={`footer-dropdown-menu ${langOpen ? 'show' : ''}`}>
                       <li><button type="button" className="footer-dropdown-item" onClick={() => { setLanguage('English'); setLangOpen(false); }}>English</button></li>

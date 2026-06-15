@@ -70,11 +70,11 @@ export default function Header() {
         }
 
         .tpoffcanvas__close-btn .close-btn:hover {
-          background: #faa61e !important;
-          border-color: #faa61e !important;
+          background: var(--tp-theme-primary) !important;
+          border-color: var(--tp-theme-primary) !important;
           color: #000 !important;
           transform: rotate(90deg) !important;
-          box-shadow: 0 0 15px rgba(250, 166, 30, 0.4) !important;
+          box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important;
         }
 
         .tpoffcanvas__contact {
@@ -85,7 +85,7 @@ export default function Header() {
         .tpoffcanvas__contact span.contact-title {
           font-size: 12px !important;
           font-weight: 800 !important;
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
           text-transform: uppercase !important;
           letter-spacing: 2px !important;
           margin-bottom: 25px !important;
@@ -101,7 +101,7 @@ export default function Header() {
           bottom: 0 !important;
           width: 24px !important;
           height: 2px !important;
-          background: #faa61e !important;
+          background: var(--tp-theme-primary) !important;
         }
 
         .tpoffcanvas__contact ul {
@@ -137,14 +137,14 @@ export default function Header() {
           align-items: center !important;
           justify-content: center !important;
           background: rgba(250, 166, 30, 0.1) !important;
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
           border-radius: 8px !important;
           font-size: 14px !important;
           transition: all 0.3s ease !important;
         }
 
         .tpoffcanvas__contact ul li.contact-card:hover i {
-          background: #faa61e !important;
+          background: var(--tp-theme-primary) !important;
           color: #000 !important;
         }
 
@@ -160,7 +160,7 @@ export default function Header() {
         }
 
         .tpoffcanvas__contact ul li.contact-card a:hover {
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
         }
 
         /* Dropdown Language Overrides */
@@ -208,7 +208,7 @@ export default function Header() {
 
         .tpoffcanvas__contact .dropdown-item:hover {
           background: rgba(250, 166, 30, 0.12) !important;
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
         }
 
         /* Newsletter Input Overrides */
@@ -220,7 +220,7 @@ export default function Header() {
         .tpoffcanvas__input p.input-title {
           font-size: 12px !important;
           font-weight: 800 !important;
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
           text-transform: uppercase !important;
           letter-spacing: 2px !important;
           margin-bottom: 20px !important;
@@ -236,7 +236,7 @@ export default function Header() {
           bottom: 0 !important;
           width: 24px !important;
           height: 2px !important;
-          background: #faa61e !important;
+          background: var(--tp-theme-primary) !important;
         }
 
         .tpoffcanvas__input form {
@@ -258,7 +258,7 @@ export default function Header() {
 
         .tpoffcanvas__input input:focus {
           background: rgba(255, 255, 255, 0.04) !important;
-          border-color: #faa61e !important;
+          border-color: var(--tp-theme-primary) !important;
           box-shadow: 0 0 12px rgba(250, 166, 30, 0.15) !important;
           outline: none !important;
         }
@@ -266,7 +266,7 @@ export default function Header() {
         .tpoffcanvas__input button {
           height: 42px !important;
           width: 42px !important;
-          background: #faa61e !important;
+          background: var(--tp-theme-primary) !important;
           color: #000 !important;
           font-size: 14px !important;
           position: absolute !important;
@@ -282,9 +282,9 @@ export default function Header() {
         }
 
         .tpoffcanvas__input button:hover {
-          background: #ffb300 !important;
+          background: #059669 !important;
           transform: scale(1.03) !important;
-          box-shadow: 0 0 10px rgba(250, 166, 30, 0.3) !important;
+          box-shadow: 0 0 10px rgba(16, 185, 129, 0.3) !important;
         }
 
         /* Action Buttons Grid */
@@ -302,7 +302,7 @@ export default function Header() {
         }
 
         .offcanvas-action-grid .btn-enquiry {
-          background: linear-gradient(135deg, #faa61e 0%, #ff8c00 100%) !important;
+          background: linear-gradient(135deg, var(--tp-theme-primary) 0%, #059669 100%) !important;
           color: #000 !important;
           font-weight: 700 !important;
           font-size: 12.5px !important;
@@ -315,13 +315,13 @@ export default function Header() {
           text-transform: uppercase !important;
           letter-spacing: 1px !important;
           transition: all 0.3s ease !important;
-          box-shadow: 0 4px 15px rgba(250, 166, 30, 0.2) !important;
+          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2) !important;
           text-decoration: none !important;
         }
 
         .offcanvas-action-grid .btn-enquiry:hover {
           transform: translateY(-2px) !important;
-          box-shadow: 0 6px 20px rgba(250, 166, 30, 0.4) !important;
+          box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4) !important;
           color: #000 !important;
         }
 
@@ -378,7 +378,7 @@ export default function Header() {
 
         .tp-main-menu-mobile ul li a:hover,
         .tp-main-menu-mobile ul li a.active {
-          color: #faa61e !important;
+          color: var(--tp-theme-primary) !important;
           padding-left: 6px !important;
         }
       `}</style>
@@ -463,7 +463,7 @@ export default function Header() {
                   rel="noreferrer" 
                   target="_blank"
                 >
-                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>{t('Our Office')}</strong>
+                  <strong style={{ display: 'block', color: 'var(--tp-theme-primary)', marginBottom: '4px', fontSize: '13.5px' }}>{t('Our Office')}</strong>
                   <span className="address-text">
                     Hanron Tech Innovations Pvt. Ltd. 
                     <br /> 
@@ -474,7 +474,7 @@ export default function Header() {
               <li className="contact-card">
                 <i className="fas fa-phone"></i>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>{t('Phone Numbers')}</strong>
+                  <strong style={{ display: 'block', color: 'var(--tp-theme-primary)', marginBottom: '4px', fontSize: '13.5px' }}>{t('Phone Numbers')}</strong>
                   <a href="tel:919755675433">+91-9755675433</a>
                   <a href="tel:919755675433">+91 (0)-755-4331833</a>
                 </div>
@@ -482,7 +482,7 @@ export default function Header() {
               <li className="contact-card">
                 <i className="fas fa-envelope"></i>
                 <div>
-                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>{t('Email Address')}</strong>
+                  <strong style={{ display: 'block', color: 'var(--tp-theme-primary)', marginBottom: '4px', fontSize: '13.5px' }}>{t('Email Address')}</strong>
                   <a href="mailto:info@krishiudaan.in">info@krishiudaan.in</a>
                 </div>
               </li>
@@ -496,7 +496,7 @@ export default function Header() {
                       aria-expanded={langDropdownOpen}
                     >
                       {language === 'English' ? 'English' : language === 'Hindi' ? 'हिंदी (Hindi)' : '日本語 (Japanese)'}
-                      <i className="far fa-chevron-down" style={{ fontSize: '11px', color: '#faa61e' }}></i>
+                      <i className="far fa-chevron-down" style={{ fontSize: '11px', color: 'var(--tp-theme-primary)' }}></i>
                     </button>
                     <ul className={`dropdown-menu ${langDropdownOpen ? 'show' : ''}`} style={{ display: langDropdownOpen ? 'block' : 'none' }}>
                       <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('English'); setLangDropdownOpen(false); }}>English</span></li>

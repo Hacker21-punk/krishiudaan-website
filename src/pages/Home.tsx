@@ -386,7 +386,7 @@ export default function Home() {
                   <span className="tp-section-highlight">
                     India
                     <svg width="205" height="11" viewBox="0 0 205 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 0L205 11H0V0Z" fill="#faa61e"></path>
+                      <path d="M0 0L205 11H0V0Z" fill="var(--tp-theme-primary)"></path>
                     </svg>
                   </span>
                 </h2>
