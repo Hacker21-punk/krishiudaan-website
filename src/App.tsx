@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
-import Services from './pages/Services'
-import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
+import NotFound from './pages/NotFound'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -38,9 +37,10 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
-          <Route path="services" element={<Services />} />
-          <Route path="gallery" element={<Gallery />} />
+          <Route path="services" element={<NotFound />} />
+          <Route path="gallery" element={<NotFound />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <ScrollToTopButton />

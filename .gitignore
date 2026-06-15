@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary Parser Files
+about_content_structure.html
+page_props.json
+

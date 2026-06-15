@@ -1,108 +1,146 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', msg: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    if (!formData.name || !formData.email || !formData.msg) return;
+
+    setStatus('loading');
+    setTimeout(() => {
+      setStatus('success');
+      setFormData({ name: '', email: '', msg: '' });
+      // Reset success status after 4 seconds
+      setTimeout(() => setStatus('idle'), 4000);
+    }, 1000);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
     <>
-      {/* Page Hero */}
-      <section className="relative py-32 overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #0a0a0a 100%)' }}>
-        <div className="container mx-auto px-4 relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">Contact Us</h1>
-          <p className="text-lg text-white/60 max-w-xl">Get in Touch with Our Team — We're Here to Help</p>
-        </div>
-      </section>
+      <div className="tp-contact-area pt-200 pb-130">
+        <div className="container">
+          <div className="row">
+            {/* Left Column: Contact details and photo */}
+            <div className="col-xl-6 col-lg-6">
+              <div className="tp-contct-wrapper contact-space-40">
+                <div className="tp-contact-thumb mb-60">
+                  <img src="/assets/img/contact/contact-1.jpg" alt="Contact Us" loading="lazy" />
+                </div>
+                
+                <div className="tp-contact-info mb-40">
+                  <h4 className="contact-title">Mail Address</h4>
+                  <span>
+                    <i className="fas flaticon-email"></i> 
+                    <a href="mailto:info@krishiudaan.in">info@krishiudaan.in</a>
+                  </span>
+                </div>
 
-      {/* Contact Content */}
-      <section className="py-24" style={{ background: '#fff' }}>
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left - Info */}
-            <div>
-              <h5 className="tp-subtitle">Contact Information</h5>
-              <h2 className="tp-title mb-6">Get in Touch</h2>
-              <p className="mb-10 text-lg leading-relaxed" style={{ color: '#666' }}>Have questions about our drone spraying services? We'd love to hear from you.</p>
+                <div className="tp-contact-info mb-40">
+                  <h4 className="contact-title">Phone Number</h4>
+                  <span>
+                    <i className="fas fa-phone"></i> 
+                    <a href="tel:+919755675433">+91-9755675433</a>
+                  </span>
+                </div>
 
-              <div className="space-y-6">
-                {[
-                  { icon: '📍', title: 'Address', lines: ['Hanron Tech Innovations Pvt. Ltd., Plot No. 23-B, Sector - D, Near CIPET, JK Road, Govindpura Industrial Area, Bhopal, MP 462023, India'] },
-                  { icon: '📞', title: 'Phone', lines: ['+91-9755675433', '+91 (0)-755-4331833'] },
-                  { icon: '✉️', title: 'Email', lines: ['info@krishiudaan.in', 'KrishiUdaanmail@gmail.com'] },
-                  { icon: '🕐', title: 'Working Hours', lines: ['Monday - Saturday: 9:00 AM - 6:00 PM', 'Sunday: Closed'] },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="text-2xl shrink-0 mt-1">{item.icon}</div>
-                    <div>
-                      <h3 className="font-bold mb-1" style={{ color: '#1a1a2e' }}>{item.title}</h3>
-                      <p className="text-sm leading-relaxed" style={{ color: '#666' }}>{item.lines.join(', ')}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                <div className="tp-contact-info mb-40">
+                  <h4 className="contact-title">Landline Number</h4>
+                  <span>
+                    <i className="fas fa-phone"></i> 
+                    <a href="tel:+917554331833">+91 (0)-755-4331833</a>
+                  </span>
+                </div>
 
-              <div className="mt-10 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.5!2d77.45!3d23.23!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDEzJzQ4LjAiTiA3N8KwMjcnMDAuMCJF!5e0!3m2!1sen!2sin"
-                  width="100%"
-                  height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  title="Krishi Udaan Location"
-                />
+                <div className="tp-contact-info">
+                  <h4 className="contact-title">Address line</h4>
+                  <span>
+                    <i className="fas fa-location"></i> 
+                    <a 
+                      href="https://www.google.com/maps/dir//Forgewell+Corporation+Plot+No.+23-B+JK+Rd,+near+CIPET,+Sector+-+D,+Govindpura+Industrial+Area+Bhopal,+Madhya+Pradesh+462023/@23.2661524,77.4554368,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x397c69e5ae9a85ff:0x7a76c61bde3cea88" 
+                      target="_blank" 
+                      rel="noreferrer"
+                    >
+                      <b>Hanron Tech Innovations Private Limited</b>
+                      <br />
+                      Plot No. 23-B, Sector - D, Near CIPET, JK Road, Govindpura Industrial Area, Bhopal, Madhya Pradesh 462023, India
+                    </a>
+                  </span>
+                </div>
               </div>
             </div>
 
-            {/* Right - Form */}
-            <div className="service-card p-8 lg:p-10 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-2" style={{ color: '#1a1a2e' }}>Send us a Message</h3>
-              <p className="text-sm mb-8" style={{ color: '#888' }}>Fill out the form below and we'll get back to you shortly.</p>
-
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-16 text-center">
-                  <div className="text-5xl mb-4">✅</div>
-                  <h4 className="text-2xl font-bold mb-2" style={{ color: '#1a1a2e' }}>Thank You!</h4>
-                  <p style={{ color: '#666' }}>We'll get back to you as soon as possible.</p>
+            {/* Right Column: Contact form */}
+            <div className="col-xl-6 col-lg-6">
+              <div className="tpcontact">
+                <h4 className="tp-contact-big-title">For sales and service queries...</h4>
+                <div className="tpcontact__form tpcontact__form-3">
+                  <form id="contact-form" onSubmit={handleSubmit}>
+                    <div className="mb-30">
+                      <input 
+                        name="name" 
+                        type="text" 
+                        placeholder="Enter your Name" 
+                        value={formData.name} 
+                        onChange={handleInputChange} 
+                        required 
+                      />
+                    </div>
+                    <div className="mb-30">
+                      <input 
+                        name="email" 
+                        type="email" 
+                        placeholder="Enter your Mail" 
+                        value={formData.email} 
+                        onChange={handleInputChange} 
+                        required 
+                      />
+                    </div>
+                    <div className="mb-30">
+                      <textarea 
+                        name="msg" 
+                        placeholder="Enter your message" 
+                        value={formData.msg} 
+                        onChange={handleInputChange} 
+                        required 
+                      />
+                    </div>
+                    <div className="form-submit">
+                      <button 
+                        type="submit" 
+                        className="tp-btn-yellow" 
+                        disabled={status === 'loading'}
+                      >
+                        {status === 'loading' ? 'Sending...' : 'Send Message'}
+                      </button>
+                    </div>
+                  </form>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#333' }}>First Name</label>
-                      <input type="text" required className="w-full px-5 py-3 rounded-xl border border-gray-200 text-sm outline-none transition-all focus:border-amber-400" placeholder="John" style={{ background: '#f9f9f9' }} />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold mb-2" style={{ color: '#333' }}>Last Name</label>
-                      <input type="text" required className="w-full px-5 py-3 rounded-xl border border-gray-200 text-sm outline-none transition-all focus:border-amber-400" placeholder="Doe" style={{ background: '#f9f9f9' }} />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#333' }}>Email Address</label>
-                    <input type="email" required className="w-full px-5 py-3 rounded-xl border border-gray-200 text-sm outline-none transition-all focus:border-amber-400" placeholder="john@example.com" style={{ background: '#f9f9f9' }} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#333' }}>Phone Number</label>
-                    <input type="tel" className="w-full px-5 py-3 rounded-xl border border-gray-200 text-sm outline-none transition-all focus:border-amber-400" placeholder="+91 98765 43210" style={{ background: '#f9f9f9' }} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: '#333' }}>Message</label>
-                    <textarea required rows={4} className="w-full px-5 py-3 rounded-xl border border-gray-200 text-sm outline-none transition-all focus:border-amber-400 resize-none" placeholder="How can we help you?" style={{ background: '#f9f9f9' }} />
-                  </div>
-                  <button type="submit" className="tp-btn-yellow w-full py-4 justify-center text-base">
-                    Send Message <i className="fas fa-paper-plane"></i>
-                  </button>
-                </form>
-              )}
+                
+                <p 
+                  className="ajax-response" 
+                  style={{ 
+                    marginTop: '20px', 
+                    fontWeight: 600, 
+                    color: status === 'success' ? '#2e7d32' : '#d32f2f', 
+                    opacity: status !== 'idle' ? 1 : 0, 
+                    transition: 'opacity 0.3s ease' 
+                  }}
+                >
+                  {status === 'success' && 'your message sent successfully'}
+                  {status === 'error' && 'Failed to send message. Please try again later.'}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }
