@@ -1,11 +1,78 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../context/LanguageContext';
 
 export default function Footer() {
   const [langOpen, setLangOpen] = useState(false);
+  const { language, setLanguage, t } = useLang();
 
   return (
     <footer className="p-relative">
+      <style>{`
+        /* Footer Dropdown Styles */
+        .footer-dropdown-wrapper {
+          margin-top: 15px;
+          display: inline-block;
+          position: relative;
+          text-align: left;
+        }
+        .footer-dropdown-toggle {
+          background: rgba(255, 255, 255, 0.05) !important;
+          border: 1px solid rgba(255, 255, 255, 0.1) !important;
+          color: rgba(255, 255, 255, 0.9) !important;
+          border-radius: 8px !important;
+          padding: 8px 16px !important;
+          font-size: 13px !important;
+          font-weight: 600 !important;
+          transition: all 0.3s ease !important;
+          cursor: pointer !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          gap: 8px !important;
+        }
+        .footer-dropdown-toggle:hover {
+          background: rgba(255, 255, 255, 0.1) !important;
+          border-color: rgba(255, 255, 255, 0.2) !important;
+        }
+        .footer-dropdown-menu {
+          background: #0f1c07 !important;
+          border: 1px solid rgba(255, 255, 255, 0.08) !important;
+          border-radius: 8px !important;
+          box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6) !important;
+          padding: 6px !important;
+          position: absolute !important;
+          bottom: 100% !important;
+          left: 0 !important;
+          margin-bottom: 8px !important;
+          min-width: 160px !important;
+          z-index: 1000 !important;
+          display: none;
+          list-style: none !important;
+          margin-left: 0;
+          padding-left: 0;
+        }
+        .footer-dropdown-menu.show {
+          display: block !important;
+        }
+        .footer-dropdown-item {
+          color: rgba(255, 255, 255, 0.75) !important;
+          border-radius: 6px !important;
+          padding: 8px 12px !important;
+          font-size: 13px !important;
+          font-weight: 500 !important;
+          transition: all 0.2s ease !important;
+          display: block !important;
+          width: 100% !important;
+          text-align: left !important;
+          background: transparent !important;
+          border: none !important;
+          cursor: pointer !important;
+        }
+        .footer-dropdown-item:hover {
+          background: rgba(250, 166, 30, 0.12) !important;
+          color: #faa61e !important;
+        }
+      `}</style>
       {/* Scroll to Top button handled globally or statically here */}
       <button 
         className="scrollTop d-none d-md-block" 
@@ -47,14 +114,14 @@ export default function Footer() {
               <div className="col-xl-7 col-lg-7 col-md-7 col-12">
                 <div className="tp-footer-top">
                   <h5 className="tp-footer-title">
-                    Over a Decade in Innovation, and Our Flight Has Just Begun
+                    {t('Over a Decade in Innovation, and Our Flight Has Just Begun')}
                   </h5>
                 </div>
               </div>
               <div className="col-xl-5 col-lg-5 col-md-5 col-12">
                 <div className="tp-footer-button text-start text-md-end">
                   <Link className="tp-btn" to="/contact">
-                    Want some spraying?<i className="far fa-arrow-right"></i>
+                    {t('Want some spraying?')}<i className="far fa-arrow-right"></i>
                   </Link>
                 </div>
               </div>
@@ -80,25 +147,21 @@ export default function Footer() {
                     <a href="#">Terms and conditions</a>
                   </div>
                   
-                  <div className="container p-0">
-                    <div className="dropdown">
-                      <button 
-                        className="btn btn-secondary dropdown-toggle" 
-                        type="button"
-                        onClick={() => setLangOpen(!langOpen)}
-                        aria-expanded={langOpen}
-                      >
-                        Select Language
-                      </button>
-                      <ul 
-                        className={`dropdown-menu ${langOpen ? 'show' : ''}`} 
-                        style={{ display: langOpen ? 'block' : 'none' }}
-                      >
-                        <li><span className="dropdown-item cursor-pointer">English</span></li>
-                        <li><span className="dropdown-item cursor-pointer">Hindi</span></li>
-                        <li><span className="dropdown-item cursor-pointer">Japanese</span></li>
-                      </ul>
-                    </div>
+                  <div className="footer-dropdown-wrapper">
+                    <button 
+                      className="footer-dropdown-toggle" 
+                      type="button"
+                      onClick={() => setLangOpen(!langOpen)}
+                      aria-expanded={langOpen}
+                    >
+                      {language === 'English' ? 'English' : language === 'Hindi' ? 'हिंदी (Hindi)' : '日本語 (Japanese)'}
+                      <i className="far fa-chevron-up" style={{ fontSize: '10px', color: '#faa61e' }}></i>
+                    </button>
+                    <ul className={`footer-dropdown-menu ${langOpen ? 'show' : ''}`}>
+                      <li><button type="button" className="footer-dropdown-item" onClick={() => { setLanguage('English'); setLangOpen(false); }}>English</button></li>
+                      <li><button type="button" className="footer-dropdown-item" onClick={() => { setLanguage('Hindi'); setLangOpen(false); }}>हिंदी (Hindi)</button></li>
+                      <li><button type="button" className="footer-dropdown-item" onClick={() => { setLanguage('Japanese'); setLangOpen(false); }}>日本語 (Japanese)</button></li>
+                    </ul>
                   </div>
                 </div>
               </div>

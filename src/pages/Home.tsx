@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useLang } from '../context/LanguageContext';
 
 /* ========== GALLERY IMAGES ========== */
 const galleryImages = [
@@ -67,6 +68,7 @@ const services = [
 ];
 
 export default function Home() {
+  const { t } = useLang();
   const [videoIdx, setVideoIdx] = useState(0);
   const galleryRef = useRef<HTMLDivElement>(null);
 
@@ -102,14 +104,14 @@ export default function Home() {
                 <div className="tp-hero-content">
                   <div className="tp-hero-text">
                     <h1 className="tp-hero-title wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
-                      Elevating Skies, Nurturing Fields
+                      {t('Elevating Skies, Nurturing Fields')}
                     </h1>
                     <p className="wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
-                      Transforming <b>Indian Agriculture</b> with <b>Drone Spraying</b>. Embark on a journey into the future of agriculture with us. Our smart spraying drones will transform the way you cultivate
+                      {t('Hero Description')}
                     </p>
                     <div className="tp-hero-button mb-140 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
                       <a className="tp-btn-grey" href="#creative">
-                        Explore Drone Farming <i className="far fa-arrow-right"></i>
+                        {t('Explore Drone Farming')} <i className="far fa-arrow-right"></i>
                       </a>
                     </div>
                     <div className="tp-hero-social pb-30 wow tpfadeIn" data-wow-duration=".7s" data-wow-delay="1.2s">

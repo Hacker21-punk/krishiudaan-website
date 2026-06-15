@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLang } from '../context/LanguageContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLang();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -452,7 +454,7 @@ export default function Header() {
           </div>
           
           <div className="tpoffcanvas__contact">
-            <span className="contact-title">Contact us</span>
+            <span className="contact-title">{t('Contact us')}</span>
             <ul>
               <li className="contact-card">
                 <i className="fas fa-crosshairs"></i>
@@ -461,7 +463,7 @@ export default function Header() {
                   rel="noreferrer" 
                   target="_blank"
                 >
-                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>Our Office</strong>
+                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>{t('Our Office')}</strong>
                   <span className="address-text">
                     Hanron Tech Innovations Pvt. Ltd. 
                     <br /> 
@@ -472,7 +474,7 @@ export default function Header() {
               <li className="contact-card">
                 <i className="fas fa-phone"></i>
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>Phone Numbers</strong>
+                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>{t('Phone Numbers')}</strong>
                   <a href="tel:919755675433">+91-9755675433</a>
                   <a href="tel:919755675433">+91 (0)-755-4331833</a>
                 </div>
@@ -480,7 +482,7 @@ export default function Header() {
               <li className="contact-card">
                 <i className="fas fa-envelope"></i>
                 <div>
-                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>Email Address</strong>
+                  <strong style={{ display: 'block', color: '#faa61e', marginBottom: '4px', fontSize: '13.5px' }}>{t('Email Address')}</strong>
                   <a href="mailto:info@krishiudaan.in">info@krishiudaan.in</a>
                 </div>
               </li>
@@ -493,13 +495,13 @@ export default function Header() {
                       onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                       aria-expanded={langDropdownOpen}
                     >
-                      Select Language
+                      {language === 'English' ? 'English' : language === 'Hindi' ? 'हिंदी (Hindi)' : '日本語 (Japanese)'}
                       <i className="far fa-chevron-down" style={{ fontSize: '11px', color: '#faa61e' }}></i>
                     </button>
                     <ul className={`dropdown-menu ${langDropdownOpen ? 'show' : ''}`} style={{ display: langDropdownOpen ? 'block' : 'none' }}>
-                      <li><span className="dropdown-item cursor-pointer" onClick={() => setLangDropdownOpen(false)}>English</span></li>
-                      <li><span className="dropdown-item cursor-pointer" onClick={() => setLangDropdownOpen(false)}>Hindi</span></li>
-                      <li><span className="dropdown-item cursor-pointer" onClick={() => setLangDropdownOpen(false)}>Japanese</span></li>
+                      <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('English'); setLangDropdownOpen(false); }}>English</span></li>
+                      <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('Hindi'); setLangDropdownOpen(false); }}>हिंदी (Hindi)</span></li>
+                      <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('Japanese'); setLangDropdownOpen(false); }}>日本語 (Japanese)</span></li>
                     </ul>
                   </div>
                 </div>
@@ -508,7 +510,7 @@ export default function Header() {
           </div>
 
           <div className="tpoffcanvas__input d-none d-sm-block">
-            <p className="input-title">Get Update</p>
+            <p className="input-title">{t('Get Update')}</p>
             <form className="p-relative" onSubmit={e => e.preventDefault()}>
               <input type="text" placeholder="Enter mail" />
               <button type="submit">
@@ -519,7 +521,7 @@ export default function Header() {
 
           <div className="offcanvas-action-grid">
             <Link to="/contact" className="btn-enquiry cursor-pointer" onClick={() => setOffcanvasOpen(false)}>
-              Send Enquiry <i className="far fa-arrow-right"></i>
+              {t('Send Enquiry')} <i className="far fa-arrow-right"></i>
             </Link>
             <a 
               href="https://wa.me/919755675433" 
@@ -527,7 +529,7 @@ export default function Header() {
               rel="noopener noreferrer" 
               className="btn-whatsapp cursor-pointer"
             >
-              WhatsApp <i className="fab fa-whatsapp" style={{ fontSize: '16px' }}></i>
+              {t('WhatsApp')} <i className="fab fa-whatsapp" style={{ fontSize: '16px' }}></i>
             </a>
           </div>
 
