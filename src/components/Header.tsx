@@ -45,20 +45,7 @@ export default function Header() {
               </div>
               <div className="col-xl-7 col-lg-7">
                 <div className="tp-main-menu">
-                  <nav id="mobile-menu">
-                    <ul>
-                      {navItems.map(item => (
-                        <li key={item.to}>
-                          <Link 
-                            to={item.to} 
-                            className={location.pathname === item.to ? 'active' : ''}
-                          >
-                            {item.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </nav>
+                  <nav id="mobile-menu"></nav>
                 </div>
               </div>
               <div className="col-xl-2 col-lg-2">
