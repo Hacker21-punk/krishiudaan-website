@@ -139,6 +139,92 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 /* Let's make sure the logo is visible */
-.dark-theme .tp-logo img {
-  filter: brightness(1.1) !important;
+.dark-theme .tp-logo img,
+.dark-theme .tp-copyright-logo img {
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.9)) brightness(1.1) !important;
+}
+
+/* Service Subtitles */
+.tp-sv-subtitle {
+  color: #153a46;
+  font-weight: 500;
+}
+.dark-theme .tp-sv-subtitle {
+  color: #faa61e !important;
+}
+
+/* Card and container backgrounds */
+.dark-theme .tp-project-box,
+.dark-theme .tp-project-box-sm,
+.dark-theme .blog-grey-color {
+  background-color: #0c1a14 !important;
+  border: 1px solid #1e3129 !important;
+}
+
+/* Mobile bar buttons and header right buttons */
+.dark-theme .bar button,
+.dark-theme .tp-header-right button {
+  background-color: #0c1a14 !important;
+  color: #f8fafc !important;
+  border: 1px solid #1e3129 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Sticky Header styling */
+.dark-theme .header-sticky {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
+  border-bottom: 1px solid #1e3129 !important;
+}
+
+/* Footer Wave transition */
+.dark-theme .footer-clip-shape svg path {
+  fill: #051009 !important;
+}
+
+/* Breadcrumb overlay and wave */
+.dark-theme .breadcrumb__area {
+  position: relative;
+}
+.dark-theme .breadcrumb__area::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(5, 16, 9, 0.65) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+.dark-theme .breadcrumb__content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+.dark-theme .ac-about-shape-img {
+  display: none !important;
+}
+
+/* Form inputs & textareas styling */
+.dark-theme input[type=text],
+.dark-theme input[type=email],
+.dark-theme textarea,
+.dark-theme .tpcontact__form input,
+.dark-theme .tpcontact__form textarea {
+  background-color: #07150f !important;
+  border: 1px solid #1e3129 !important;
+  color: #f8fafc !important;
+}
+.dark-theme input::placeholder,
+.dark-theme textarea::placeholder {
+  color: rgba(162, 183, 176, 0.6) !important;
+}
+
+/* Newsletter Input */
+.dark-theme .tp-news-button input {
+  background-color: #07150f !important;
+  border: 1px solid #1e3129 !important;
+  color: #f8fafc !important;
+}
+.dark-theme .tp-news-button input::placeholder {
+  color: rgba(162, 183, 176, 0.6) !important;
 }

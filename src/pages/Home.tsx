@@ -300,7 +300,7 @@ export default function Home() {
                     </div>
                     <div className="tp-sv-content pl-60">
                       <h3 className="tp-sv-title">{svc.title}</h3>
-                      <p style={{ color: '#153a46' }}>{svc.subtitle}</p>
+                      <p className="tp-sv-subtitle">{svc.subtitle}</p>
                       <p>{svc.desc}</p>
                     </div>
                   </div>
