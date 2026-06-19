@@ -111,9 +111,9 @@ export default function Header() {
         }
 
         .tpoffcanvas__contact ul li.contact-card {
-          background: rgba(255, 255, 255, 0.02) !important;
-          border: 1px solid rgba(255, 255, 255, 0.05) !important;
-          border-radius: 12px !important;
+          background: rgba(255, 255, 255, 0.03) !important;
+          border: 1px solid rgba(255, 255, 255, 0.07) !important;
+          border-radius: 14px !important;
           padding: 16px 16px 16px 54px !important;
           margin-bottom: 16px !important;
           position: relative !important;
@@ -122,12 +122,13 @@ export default function Header() {
         }
 
         .tpoffcanvas__contact ul li.contact-card:hover {
-          background: rgba(255, 255, 255, 0.04) !important;
-          border-color: rgba(250, 166, 30, 0.2) !important;
+          background: rgba(255, 255, 255, 0.05) !important;
+          border-color: var(--tp-theme-primary) !important;
           transform: translateY(-2px) !important;
+          box-shadow: 0 8px 24px rgba(16, 185, 129, 0.08) !important;
         }
 
-        .tpoffcanvas__contact ul li.contact-card i {
+        .tpoffcanvas__contact ul li.contact-card > i {
           position: absolute !important;
           left: 14px !important;
           top: 18px !important;
@@ -136,16 +137,16 @@ export default function Header() {
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          background: rgba(250, 166, 30, 0.1) !important;
+          background: rgba(16, 185, 129, 0.08) !important;
           color: var(--tp-theme-primary) !important;
           border-radius: 8px !important;
           font-size: 14px !important;
           transition: all 0.3s ease !important;
         }
 
-        .tpoffcanvas__contact ul li.contact-card:hover i {
+        .tpoffcanvas__contact ul li.contact-card:hover > i {
           background: var(--tp-theme-primary) !important;
-          color: #000 !important;
+          color: #051009 !important;
         }
 
         .tpoffcanvas__contact ul li.contact-card a,
@@ -163,37 +164,20 @@ export default function Header() {
           color: var(--tp-theme-primary) !important;
         }
 
+        .tpoffcanvas__contact span.address-text {
+          text-transform: none !important;
+        }
+
         /* Dropdown Language Overrides */
-        .tpoffcanvas__contact .dropdown-toggle {
-          background: rgba(255, 255, 255, 0.04) !important;
-          border: 1px solid rgba(255, 255, 255, 0.08) !important;
-          color: rgba(255, 255, 255, 0.9) !important;
-          border-radius: 10px !important;
-          padding: 10px 18px !important;
-          font-size: 13px !important;
-          font-weight: 600 !important;
-          transition: all 0.3s ease !important;
-          cursor: pointer !important;
-          width: 100% !important;
-          text-align: left !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: space-between !important;
-        }
-
-        .tpoffcanvas__contact .dropdown-toggle:hover {
-          background: rgba(255, 255, 255, 0.08) !important;
-          border-color: rgba(255, 255, 255, 0.15) !important;
-        }
-
         .tpoffcanvas__contact .dropdown-menu {
-          background: #0f1c07 !important;
+          background: #0c1a14 !important;
           border: 1px solid rgba(255, 255, 255, 0.08) !important;
-          border-radius: 10px !important;
+          border-radius: 12px !important;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
           padding: 6px !important;
           margin-top: 6px !important;
           width: 100% !important;
+          position: absolute !important;
         }
 
         .tpoffcanvas__contact .dropdown-item {
@@ -204,10 +188,14 @@ export default function Header() {
           font-weight: 500 !important;
           transition: all 0.2s ease !important;
           background: transparent !important;
+          display: block !important;
+          width: 100% !important;
+          text-align: left !important;
+          cursor: pointer !important;
         }
 
         .tpoffcanvas__contact .dropdown-item:hover {
-          background: rgba(250, 166, 30, 0.12) !important;
+          background: rgba(16, 185, 129, 0.1) !important;
           color: var(--tp-theme-primary) !important;
         }
 
@@ -289,25 +277,19 @@ export default function Header() {
 
         /* Action Buttons Grid */
         .offcanvas-action-grid {
-          display: grid !important;
-          grid-template-columns: 1fr 1fr !important;
+          display: flex !important;
+          flex-direction: column !important;
           gap: 12px !important;
           margin-top: 30px !important;
         }
 
-        @media (max-width: 576px) {
-          .offcanvas-action-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-
         .offcanvas-action-grid .btn-enquiry {
-          background: linear-gradient(135deg, var(--tp-theme-primary) 0%, #059669 100%) !important;
-          color: #000 !important;
+          background: linear-gradient(135deg, var(--tp-theme-secondary) 0%, #d97706 100%) !important;
+          color: #0a2d21 !important;
           font-weight: 700 !important;
-          font-size: 12.5px !important;
-          padding: 13px 18px !important;
-          border-radius: 10px !important;
+          font-size: 13.5px !important;
+          padding: 14px 20px !important;
+          border-radius: 12px !important;
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
@@ -315,23 +297,23 @@ export default function Header() {
           text-transform: uppercase !important;
           letter-spacing: 1px !important;
           transition: all 0.3s ease !important;
-          box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2) !important;
+          box-shadow: 0 4px 15px rgba(250, 166, 30, 0.2) !important;
           text-decoration: none !important;
         }
 
         .offcanvas-action-grid .btn-enquiry:hover {
           transform: translateY(-2px) !important;
-          box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4) !important;
-          color: #000 !important;
+          box-shadow: 0 6px 20px rgba(250, 166, 30, 0.4) !important;
+          color: #0a2d21 !important;
         }
 
         .offcanvas-action-grid .btn-whatsapp {
           background: linear-gradient(135deg, #25d366 0%, #128c7e 100%) !important;
           color: #fff !important;
           font-weight: 700 !important;
-          font-size: 12.5px !important;
-          padding: 13px 18px !important;
-          border-radius: 10px !important;
+          font-size: 13.5px !important;
+          padding: 14px 20px !important;
+          border-radius: 12px !important;
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
@@ -352,34 +334,53 @@ export default function Header() {
         }
 
         /* Mobile Nav inside Sidebar */
-        .tp-main-menu-mobile ul {
+        .tp-offcanvas-menu ul {
           padding-left: 0 !important;
           list-style: none !important;
           text-align: left !important;
+          margin-bottom: 0 !important;
         }
 
-        .tp-main-menu-mobile ul li {
+        .tp-offcanvas-menu ul li {
+          display: block !important;
+          float: none !important;
+          margin-right: 0 !important;
           border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
         }
 
-        .tp-main-menu-mobile ul li:last-child {
+        .tp-offcanvas-menu ul li:last-child {
           border-bottom: none !important;
         }
 
-        .tp-main-menu-mobile ul li a {
+        .tp-offcanvas-menu ul li a {
           color: rgba(255, 255, 255, 0.8) !important;
-          font-size: 14.5px !important;
+          font-size: 15px !important;
           font-weight: 600 !important;
-          display: block !important;
-          padding: 12px 0 !important;
-          transition: all 0.2s ease !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: space-between !important;
+          padding: 12px 14px !important;
+          transition: all 0.3s ease !important;
           text-decoration: none !important;
+          border-radius: 8px !important;
         }
 
-        .tp-main-menu-mobile ul li a:hover,
-        .tp-main-menu-mobile ul li a.active {
+        .tp-offcanvas-menu ul li a:hover,
+        .tp-offcanvas-menu ul li a.active {
           color: var(--tp-theme-primary) !important;
-          padding-left: 6px !important;
+          background: rgba(16, 185, 129, 0.06) !important;
+          padding-left: 20px !important;
+        }
+
+        .tp-offcanvas-menu ul li a i {
+          font-size: 12px !important;
+          opacity: 0.5 !important;
+          transition: transform 0.3s ease !important;
+        }
+
+        .tp-offcanvas-menu ul li a:hover i {
+          opacity: 1 !important;
+          transform: translateX(4px) !important;
         }
       `}</style>
       {/* Desktop Header */}
@@ -465,9 +466,13 @@ export default function Header() {
                 >
                   <strong style={{ display: 'block', color: 'var(--tp-theme-primary)', marginBottom: '4px', fontSize: '13.5px' }}>{t('Our Office')}</strong>
                   <span className="address-text">
-                    Hanron Tech Innovations Pvt. Ltd. 
-                    <br /> 
-                    Plot No. 23-B, Sector - D, Near CIPET, JK Road, Govindpura Industrial Area, Bhopal, Madhya Pradesh 462023, India
+                    Hanron Tech Innovations Pvt. Ltd.
+                    <br />
+                    Plot No. 23-B, Sector - D, Near CIPET
+                    <br />
+                    JK Road, Govindpura Industrial Area
+                    <br />
+                    Bhopal, Madhya Pradesh 462023, India
                   </span>
                 </a>
               </li>
@@ -476,7 +481,7 @@ export default function Header() {
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
                   <strong style={{ display: 'block', color: 'var(--tp-theme-primary)', marginBottom: '4px', fontSize: '13.5px' }}>{t('Phone Numbers')}</strong>
                   <a href="tel:919755675433">+91-9755675433</a>
-                  <a href="tel:919755675433">+91 (0)-755-4331833</a>
+                  <a href="tel:+917554331833">+91 (0)-755-4331833</a>
                 </div>
               </li>
               <li className="contact-card">
@@ -486,25 +491,34 @@ export default function Header() {
                   <a href="mailto:info@krishiudaan.in">info@krishiudaan.in</a>
                 </div>
               </li>
-              <li className="contact-card" style={{ paddingLeft: '16px' }}>
-                <div className="container p-0">
-                  <div className="dropdown">
-                    <button 
-                      className="btn btn-secondary dropdown-toggle" 
-                      type="button" 
-                      onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                      aria-expanded={langDropdownOpen}
-                    >
+              <li 
+                className="contact-card lang-selector-card cursor-pointer" 
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                style={{ paddingRight: '20px' }}
+              >
+                <i className="fas fa-globe"></i>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+                  <div style={{ textAlign: 'left' }}>
+                    <strong style={{ display: 'block', color: 'var(--tp-theme-primary)', marginBottom: '4px', fontSize: '13.5px' }}>{t('Language')}</strong>
+                    <span className="address-text" style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.85)', fontWeight: 500 }}>
                       {language === 'English' ? 'English' : language === 'Hindi' ? 'हिंदी (Hindi)' : '日本語 (Japanese)'}
-                      <i className="far fa-chevron-down" style={{ fontSize: '11px', color: 'var(--tp-theme-primary)' }}></i>
-                    </button>
-                    <ul className={`dropdown-menu ${langDropdownOpen ? 'show' : ''}`} style={{ display: langDropdownOpen ? 'block' : 'none' }}>
-                      <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('English'); setLangDropdownOpen(false); }}>English</span></li>
-                      <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('Hindi'); setLangDropdownOpen(false); }}>हिंदी (Hindi)</span></li>
-                      <li><span className="dropdown-item cursor-pointer" onClick={() => { setLanguage('Japanese'); setLangDropdownOpen(false); }}>日本語 (Japanese)</span></li>
-                    </ul>
+                    </span>
                   </div>
+                  <i 
+                    className="far fa-chevron-down" 
+                    style={{ 
+                      fontSize: '12px', 
+                      color: 'var(--tp-theme-primary)', 
+                      transition: 'transform 0.3s ease',
+                      transform: langDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }}
+                  ></i>
                 </div>
+                <ul className={`dropdown-menu ${langDropdownOpen ? 'show' : ''}`} style={{ display: langDropdownOpen ? 'block' : 'none' }}>
+                  <li><span className="dropdown-item cursor-pointer" onClick={(e) => { e.stopPropagation(); setLanguage('English'); setLangDropdownOpen(false); }}>English</span></li>
+                  <li><span className="dropdown-item cursor-pointer" onClick={(e) => { e.stopPropagation(); setLanguage('Hindi'); setLangDropdownOpen(false); }}>हिंदी (Hindi)</span></li>
+                  <li><span className="dropdown-item cursor-pointer" onClick={(e) => { e.stopPropagation(); setLanguage('Japanese'); setLangDropdownOpen(false); }}>日本語 (Japanese)</span></li>
+                </ul>
               </li>
             </ul>
           </div>
@@ -534,17 +548,18 @@ export default function Header() {
           </div>
 
           {/* Mobile links inside offcanvas */}
-          <div className="mt-4 pt-4 border-top">
-            <nav className="tp-main-menu tp-main-menu-mobile">
-              <ul style={{ display: 'block' }}>
+          <div className="mt-4 pt-4 border-top" style={{ borderTopColor: 'rgba(255, 255, 255, 0.08)' }}>
+            <nav className="tp-offcanvas-menu">
+              <ul>
                 {navItems.map(item => (
-                  <li key={item.to} className="py-2">
+                  <li key={item.to}>
                     <Link 
                       to={item.to} 
                       className={location.pathname === item.to ? 'active' : ''}
                       onClick={() => setOffcanvasOpen(false)}
                     >
-                      {item.label}
+                      <span>{t(item.label)}</span>
+                      <i className="far fa-chevron-right"></i>
                     </Link>
                   </li>
                 ))}
