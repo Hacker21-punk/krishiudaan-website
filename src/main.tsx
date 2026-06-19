@@ -4,15 +4,12 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 import { LanguageProvider } from './context/LanguageContext'
-import { ThemeProvider } from './context/ThemeContext'
 
 ReactDOM.createRoot(document.getElementById('__next')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <LanguageProvider>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <App />
       </LanguageProvider>
     </BrowserRouter>
   </React.StrictMode>,

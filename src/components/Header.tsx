@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -9,7 +8,6 @@ export default function Header() {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t } = useLang();
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -406,14 +404,6 @@ export default function Header() {
               </div>
               <div className="col-xl-2 col-lg-2">
                 <div className="tp-menu-bar text-end d-flex align-items-center justify-content-end">
-                  <button 
-                    className="theme-switcher-btn" 
-                    onClick={toggleTheme} 
-                    aria-label="Toggle dark mode"
-                    type="button"
-                  >
-                    <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
-                  </button>
                   <button onClick={() => setOffcanvasOpen(true)} aria-label="Open menu">
                     <i className="fal fa-bars"></i>
                   </button>
@@ -440,14 +430,6 @@ export default function Header() {
             </div>
             <div className="col-6">
               <div className="bar text-end d-flex align-items-center justify-content-end">
-                <button 
-                  className="theme-switcher-btn" 
-                  onClick={toggleTheme} 
-                  aria-label="Toggle dark mode"
-                  type="button"
-                >
-                  <i className={theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'}></i>
-                </button>
                 <button 
                   className="tp-menu-bar" 
                   type="button" 
