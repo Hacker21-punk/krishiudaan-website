@@ -232,8 +232,8 @@ export default function Home() {
           <div className="project-tab-main">
             <div className="row gx-1">
               {advantages.map((adv, i) => (
-                <div key={i} className="col-lg-6">
-                  <div className="tp-project-box mb-20">
+                <div key={i} className="col-lg-6 d-flex">
+                  <div className="tp-project-box mb-20 w-100">
                     <div className="tp-project-img fix mb-45">
                       <img style={{ height: '200px', width: 'auto', objectFit: 'contain', margin: '0 auto', display: 'block' }} src={adv.img} alt={adv.title} loading="lazy" />
                     </div>
