@@ -235,7 +235,7 @@ export default function Home() {
                 <div key={i} className="col-lg-6">
                   <div className="tp-project-box mb-20">
                     <div className="tp-project-img fix mb-45">
-                      <img style={{ maxHeight: '200px', backgroundSize: 'contain' }} src={adv.img} alt={adv.title} loading="lazy" />
+                      <img style={{ height: '200px', width: 'auto', objectFit: 'contain', margin: '0 auto', display: 'block' }} src={adv.img} alt={adv.title} loading="lazy" />
                     </div>
                     <div className="tp-project-content ml-20">
                       <h5>{adv.subtitle}</h5>
@@ -251,7 +251,7 @@ export default function Home() {
                 <div className="tp-project-box mb-20">
                   <div className="tp-project-img fix mb-45">
                     <img 
-                      style={{ maxHeight: '200px', backgroundSize: 'contain' }} 
+                      style={{ height: '200px', width: 'auto', objectFit: 'contain', margin: '0 auto', display: 'block' }} 
                       src={fullWidthAdvantage.img} 
                       alt={fullWidthAdvantage.title} 
                       loading="lazy" 
