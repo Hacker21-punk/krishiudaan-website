@@ -178,10 +178,8 @@ export default function Footer() {
                 </div>
                 <div className="col-xl-8 col-lg-8 col-md-8 col-12">
                   <div className="tp-copyright-social text-md-end mt-25">
-                    <a href="#"><i className="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i className="fab fa-facebook-f"></i></a>
-                    <a href="#"><i className="fab fa-instagram"></i></a>
-                    <a href="#"><i className="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/krishi_udaan/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@krishi_udaan" target="_blank" rel="noopener noreferrer"><i className="fab fa-youtube"></i></a>
                   </div>
                 </div>
               </div>
