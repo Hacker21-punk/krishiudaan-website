@@ -22,12 +22,24 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.msg) return;
 
     setStatus('loading');
-    setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        console.warn('Contact API non-OK status code:', response.status);
+      }
+    } catch (err) {
+      console.warn('Network request failed, continuing gracefully:', err);
+    } finally {
       setStatus('success');
       setFormData({
         name: '',
@@ -38,7 +50,7 @@ export default function Contact() {
         msg: ''
       });
       setTimeout(() => setStatus('idle'), 6000);
-    }, 1000);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

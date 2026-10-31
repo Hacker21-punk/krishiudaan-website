@@ -1,3 +1,8 @@
+# Environment Variables (Secrets - Never commit real keys to git)
+.env
+.env.*
+!.env.example
+
 # Logs
 logs
 *.log
@@ -26,4 +31,3 @@ dist-ssr
 # Temporary Parser Files
 about_content_structure.html
 page_props.json
-
