@@ -40,10 +40,10 @@ function FloatingActions() {
         href="https://wa.me/919755675433"
         target="_blank"
         rel="noopener noreferrer"
-        className="pointer-events-auto flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-2xl shadow-emerald-500/40 hover:scale-105 transition-all group"
+        className="pointer-events-auto flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xl shadow-emerald-700/30 hover:scale-105 transition-all group"
         aria-label="Chat on WhatsApp with Krishi Udaan"
       >
-        <MessageCircle className="w-4 h-4 fill-current text-slate-950" />
+        <MessageCircle className="w-4 h-4 fill-current text-white" />
         <span className="hidden sm:inline">WhatsApp Us</span>
       </a>
 
@@ -51,7 +51,7 @@ function FloatingActions() {
       {visible && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="pointer-events-auto w-11 h-11 rounded-full bg-slate-900/90 hover:bg-amber-400 text-slate-300 hover:text-slate-950 border border-white/10 hover:border-amber-400 shadow-xl flex items-center justify-center transition-all hover:scale-110"
+          className="pointer-events-auto w-11 h-11 rounded-full bg-white hover:bg-slate-50 text-slate-700 hover:text-emerald-700 border border-slate-300 shadow-xl flex items-center justify-center transition-all hover:scale-110"
           aria-label="Scroll back to top"
         >
           <ArrowUp className="w-5 h-5" />
