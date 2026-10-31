@@ -147,9 +147,8 @@ const translations: Record<string, Record<Language, string>> = {
 };
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    return (localStorage.getItem('lang') as Language) || 'English';
-  });
+  // English is permanently default
+  const [language, setLanguageState] = useState<Language>('English');
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

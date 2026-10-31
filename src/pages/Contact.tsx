@@ -72,78 +72,78 @@ export default function Contact() {
   ];
 
   return (
-    <div className="bg-white text-slate-900 min-h-screen font-sans selection:bg-emerald-600 selection:text-white">
+    <div className="bg-white dark:bg-[#080e15] text-slate-900 dark:text-slate-100 min-h-screen font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-200">
       
       {/* Header */}
-      <section className="relative pt-16 pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-white border-b border-slate-200">
+      <section className="relative pt-16 pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-white dark:from-[#052317]/30 dark:via-[#080e15] dark:to-[#080e15] border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 text-emerald-800 border border-emerald-200 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 mb-4 transition-colors">
             Operations &amp; Dispatch Office
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Connect with Krishi Udaan
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Reach out for agricultural spraying bookings, fleet inquiries, farmer demonstrations, or corporate partnerships.
           </p>
         </div>
       </section>
 
       {/* Main Contact Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-[#080e15] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Left Column: Direct Contact Info & Headquarters */}
             <div className="lg:col-span-5 space-y-6">
               
-              <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-md space-y-6">
+              <div className="p-8 rounded-2xl bg-slate-50 dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 shadow-md space-y-6 transition-colors">
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
                     Direct Contact Channels
                   </span>
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                     Operations &amp; Support HQ
                   </h3>
                 </div>
 
                 {/* Office Location */}
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-[#080e15] border border-slate-200 dark:border-white/10 shadow-sm transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-bold uppercase text-slate-500 tracking-wider">Our Office</h4>
+                    <h4 className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Our Office</h4>
                     <a 
                       href="https://goo.gl/maps/abHegV4AoiJA6Syd8"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-slate-700 mt-1 block leading-relaxed hover:text-emerald-700 transition-colors"
+                      className="text-xs text-slate-700 dark:text-slate-300 mt-1 block leading-relaxed hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                     >
-                      <b className="text-slate-900">Hanron Tech Innovations Pvt. Ltd.</b><br />
+                      <b className="text-slate-900 dark:text-white">Hanron Tech Innovations Pvt. Ltd.</b><br />
                       Plot No. 23-B, Sector - D, Near CIPET, JK Road, Govindpura Industrial Area, Bhopal, MP 462023, India
                     </a>
                   </div>
                 </div>
 
                 {/* Phone Numbers */}
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-[#080e15] border border-slate-200 dark:border-white/10 shadow-sm transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-bold uppercase text-slate-500 tracking-wider">Phone Numbers</h4>
+                    <h4 className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Phone Numbers</h4>
                     <div className="mt-1 space-y-1 text-xs">
                       <div>
-                        <a href="tel:+919755675433" className="text-slate-800 hover:text-emerald-700 font-semibold">
+                        <a href="tel:+919755675433" className="text-slate-800 dark:text-slate-200 hover:text-emerald-700 dark:hover:text-emerald-400 font-semibold">
                           +91 97556 75433 (Direct Mobile)
                         </a>
                       </div>
                       <div>
-                        <a href="tel:+917554331833" className="text-slate-600 hover:text-emerald-700 font-medium">
+                        <a href="tel:+917554331833" className="text-slate-600 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium">
                           +91 (0)-755-4331833 (Office Landline)
                         </a>
                       </div>
@@ -152,13 +152,13 @@ export default function Contact() {
                 </div>
 
                 {/* Email Address */}
-                <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-slate-200 shadow-sm">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-white dark:bg-[#080e15] border border-slate-200 dark:border-white/10 shadow-sm transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-bold uppercase text-slate-500 tracking-wider">Email Address</h4>
-                    <a href="mailto:info@krishiudaan.in" className="text-xs text-slate-800 hover:text-emerald-700 font-semibold mt-1 block">
+                    <h4 className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">Email Address</h4>
+                    <a href="mailto:info@krishiudaan.in" className="text-xs text-slate-800 dark:text-slate-200 hover:text-emerald-700 dark:hover:text-emerald-400 font-semibold mt-1 block">
                       info@krishiudaan.in
                     </a>
                   </div>
@@ -183,16 +183,16 @@ export default function Contact() {
 
             {/* Right Column: Interactive Booking & Enquiry Form */}
             <div className="lg:col-span-7">
-              <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200 shadow-xl">
+              <div className="p-8 sm:p-10 rounded-2xl bg-white dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 shadow-xl transition-colors">
                 
                 <div className="mb-8">
-                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+                  <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
                     Book Spraying or Ask Questions
                   </span>
-                  <h3 className="text-2xl font-bold text-slate-900">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
                     Send Us an Official Enquiry
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
                     Fill out your field details below and our operations lead will get in touch with you.
                   </p>
                 </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                         Your Full Name *
                       </label>
                       <input
@@ -210,12 +210,12 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         placeholder="e.g. Ramesh Patel"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080e15] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white dark:focus:bg-[#080e15] transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                         Email Address *
                       </label>
                       <input
@@ -225,14 +225,14 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         placeholder="e.g. farmer@example.com"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080e15] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white dark:focus:bg-[#080e15] transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                         Phone / WhatsApp Number
                       </label>
                       <input
@@ -241,12 +241,12 @@ export default function Contact() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="e.g. +91 98765 43210"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080e15] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white dark:focus:bg-[#080e15] transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                         Estimated Farm Acreage
                       </label>
                       <input
@@ -255,20 +255,20 @@ export default function Contact() {
                         value={formData.acreage}
                         onChange={handleInputChange}
                         placeholder="e.g. 25 Acres"
-                        className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                        className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080e15] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white dark:focus:bg-[#080e15] transition-colors"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                       Service Requirement
                     </label>
                     <select
                       name="serviceType"
                       value={formData.serviceType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080e15] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white text-xs focus:outline-none focus:border-emerald-600 focus:bg-white dark:focus:bg-[#080e15] transition-colors"
                     >
                       <option value="Drone Spraying (Fertilizer/Pesticide)">Precision Drone Spraying (Fertilizer/Pesticide)</option>
                       <option value="Crop Health & NDVI Aerial Scouting">Crop Health &amp; NDVI Aerial Scouting</option>
@@ -279,7 +279,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1.5">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                       Message / Field Details *
                     </label>
                     <textarea
@@ -289,7 +289,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       placeholder="Tell us about your crop type, location/district, and preferred spraying date..."
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-[#080e15] border border-slate-300 dark:border-white/15 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 text-xs focus:outline-none focus:border-emerald-600 focus:bg-white dark:focus:bg-[#080e15] transition-colors resize-none"
                     />
                   </div>
 
@@ -305,8 +305,8 @@ export default function Contact() {
                   </div>
 
                   {status === 'success' && (
-                    <div className="p-4 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-800 text-xs flex items-center gap-3">
-                      <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-600" />
+                    <div className="p-4 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-300 text-xs flex items-center gap-3">
+                      <CheckCircle2 className="w-5 h-5 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
                       <span>Thank you! Your message has been sent successfully. Our team will contact you shortly.</span>
                     </div>
                   )}
@@ -320,17 +320,17 @@ export default function Contact() {
       </section>
 
       {/* Frequently Asked Questions Accordion */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <section className="py-20 bg-slate-50 dark:bg-[#0a121c] border-t border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-12">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
               Common Questions
             </span>
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Frequently Asked Questions
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1">
               Everything you need to know about Krishi Udaan agricultural drone services.
             </p>
           </div>
@@ -339,22 +339,22 @@ export default function Contact() {
             {faqs.map((faq, idx) => (
               <div 
                 key={idx}
-                className="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm transition-colors"
+                className="rounded-2xl bg-white dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 overflow-hidden shadow-sm transition-colors"
               >
                 <button
                   type="button"
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full text-left p-5 flex items-center justify-between gap-4 text-sm font-bold text-slate-900 hover:text-emerald-700 transition-colors"
+                  className="w-full text-left p-5 flex items-center justify-between gap-4 text-sm font-bold text-slate-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                 >
                   <span className="flex items-center gap-2.5">
-                    <HelpCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <HelpCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0" />
                     <span>{faq.q}</span>
                   </span>
-                  <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0 ${openFaq === idx ? 'rotate-180 text-emerald-600' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-200 flex-shrink-0 ${openFaq === idx ? 'rotate-180 text-emerald-600 dark:text-emerald-400' : ''}`} />
                 </button>
 
                 {openFaq === idx && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-white/10">
                     {faq.a}
                   </div>
                 )}

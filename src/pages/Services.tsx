@@ -1,14 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Droplet, 
-  Clock, 
-  ShieldCheck, 
-  Zap, 
   CheckCircle2, 
   ArrowRight, 
-  Activity, 
-  Compass, 
   PhoneCall
 } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
@@ -119,24 +113,24 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-white text-slate-900 font-sans selection:bg-emerald-600 selection:text-white">
+    <div className="bg-white dark:bg-[#080e15] text-slate-900 dark:text-slate-100 font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-200">
       
       {/* Services Hero */}
-      <section className="relative pt-16 pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-white border-b border-slate-200">
+      <section className="relative pt-16 pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-white dark:from-[#052317]/30 dark:via-[#080e15] dark:to-[#080e15] border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 text-emerald-800 border border-emerald-200 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 mb-4 transition-colors">
             Industrial Agri-Drone Services
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             Precision Agricultural Drone Spraying <br />
-            <span className="text-emerald-700">
+            <span className="text-emerald-700 dark:text-emerald-400">
               Engineered for Indian Fields
             </span>
           </h1>
 
-          <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
             From single-acre smallholdings to 500+ acre corporate estates, our fleet delivers guaranteed uniform coverage, 90% water conservation, and total operator safety.
           </p>
 
@@ -152,9 +146,9 @@ export default function Services() {
               href="https://wa.me/919755675433"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-emerald-800 bg-white hover:bg-emerald-50 border border-emerald-300 text-sm transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-emerald-800 dark:text-emerald-300 bg-white dark:bg-[#0f1924] hover:bg-emerald-50 dark:hover:bg-[#152332] border border-emerald-300 dark:border-emerald-700/60 text-sm transition-all shadow-sm"
             >
-              <PhoneCall className="w-4 h-4 text-emerald-600" />
+              <PhoneCall className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <span>Direct WhatsApp Hotline</span>
             </a>
           </div>
@@ -163,14 +157,14 @@ export default function Services() {
       </section>
 
       {/* Interactive Service Explorer */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-[#080e15] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
               Comprehensive Capabilities
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               Our Primary Service Offerings
             </h2>
           </div>
@@ -183,8 +177,8 @@ export default function Services() {
                 onClick={() => setSelectedService(i)}
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                   selectedService === i
-                    ? 'bg-emerald-600 text-white shadow-md'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
+                    ? 'bg-emerald-600 dark:bg-emerald-500 text-white shadow-md'
+                    : 'bg-slate-100 dark:bg-[#0f1924] text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#152332] border border-slate-200 dark:border-white/10'
                 }`}
               >
                 <span>{svc.title.split(' ')[0]} {svc.title.split(' ')[1]}</span>
@@ -196,11 +190,11 @@ export default function Services() {
           {(() => {
             const svc = serviceOfferings[selectedService];
             return (
-              <div className="rounded-2xl p-8 sm:p-12 bg-slate-50 border border-slate-200 shadow-lg">
+              <div className="rounded-2xl p-8 sm:p-12 bg-slate-50 dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 shadow-lg transition-colors">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                   
                   {/* Visual */}
-                  <div className="lg:col-span-5 rounded-xl bg-white p-6 border border-slate-200 flex items-center justify-center shadow-sm">
+                  <div className="lg:col-span-5 rounded-xl bg-white dark:bg-[#080e15] p-6 border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm transition-colors">
                     <img
                       src={svc.image}
                       alt={svc.title}
@@ -211,30 +205,30 @@ export default function Services() {
                   {/* Details */}
                   <div className="lg:col-span-7 space-y-4">
                     <div className="flex items-center gap-3">
-                      <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-800 border border-emerald-200">
+                      <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 transition-colors">
                         {svc.badge}
                       </span>
-                      <span className="text-xs font-bold text-amber-600">
+                      <span className="text-xs font-bold text-amber-600 dark:text-amber-400">
                         {svc.stats}
                       </span>
                     </div>
 
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                       {svc.title}
                     </h3>
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                       {svc.subtitle}
                     </p>
 
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                       {svc.desc}
                     </p>
 
                     {/* Benefits List */}
                     <div className="pt-2 space-y-2">
                       {svc.benefits.map((b, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                        <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" />
                           <span>{b}</span>
                         </div>
                       ))}
@@ -261,14 +255,14 @@ export default function Services() {
       </section>
 
       {/* Operational Workflow Steps */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200">
+      <section className="py-20 bg-slate-50 dark:bg-[#0a121c] border-t border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
               Standard Operating Procedure
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               How Drone Spraying Works
             </h2>
           </div>
@@ -277,16 +271,16 @@ export default function Services() {
             {workflowSteps.map((ws, i) => (
               <div 
                 key={i}
-                className="p-6 rounded-2xl bg-white border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+                className="p-6 rounded-2xl bg-white dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 flex flex-col justify-between shadow-sm hover:shadow-md transition-all"
               >
                 <div>
-                  <div className="text-2xl font-black text-amber-600 mb-3 font-mono">
+                  <div className="text-2xl font-black text-amber-600 dark:text-amber-400 mb-3 font-mono">
                     {ws.step}
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 mb-2">
+                  <h4 className="text-base font-bold text-slate-900 dark:text-white mb-2">
                     {ws.title}
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {ws.desc}
                   </p>
                 </div>

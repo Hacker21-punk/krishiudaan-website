@@ -36,26 +36,26 @@ export default function Gallery() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   return (
-    <div className="bg-white text-slate-900 min-h-screen font-sans selection:bg-emerald-600 selection:text-white">
+    <div className="bg-white dark:bg-[#080e15] text-slate-900 dark:text-slate-100 min-h-screen font-sans selection:bg-emerald-600 selection:text-white transition-colors duration-200">
       
       {/* Hero Header */}
-      <section className="relative pt-16 pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-white border-b border-slate-200">
+      <section className="relative pt-16 pb-20 bg-gradient-to-b from-emerald-50/50 via-white to-white dark:from-[#052317]/30 dark:via-[#080e15] dark:to-[#080e15] border-b border-slate-200 dark:border-white/10 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 text-emerald-800 border border-emerald-200 mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/60 mb-4 transition-colors">
             Field Operations Archive
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Agricultural Drone Field Operations Gallery
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Authentic photographs of Krishi Udaan agricultural drones, certified flight pilots, mobile generator stations, and operational farmlands across India.
           </p>
 
-          <div className="mt-6 flex items-center justify-center gap-3 text-xs text-slate-500 font-medium">
-            <span className="font-bold text-emerald-700">25 High-Resolution Captures</span>
+          <div className="mt-6 flex items-center justify-center gap-3 text-xs text-slate-500 dark:text-slate-400 font-medium">
+            <span className="font-bold text-emerald-700 dark:text-emerald-400">25 High-Resolution Captures</span>
             <span>•</span>
             <span>Click any image to enlarge</span>
           </div>
@@ -63,13 +63,13 @@ export default function Gallery() {
       </section>
 
       {/* Grid of 25 Images */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-[#080e15] transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {galleryImages.map((img, i) => (
               <div
                 key={i}
-                className="group relative rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 cursor-pointer aspect-square"
+                className="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500/60 hover:shadow-lg transition-all duration-300 cursor-pointer aspect-square"
                 onClick={() => setSelectedImg(img)}
               >
                 <img
@@ -111,7 +111,7 @@ export default function Gallery() {
           onClick={() => setSelectedImg(null)}
         >
           <div 
-            className="relative max-w-5xl max-h-[90vh] bg-white rounded-2xl overflow-hidden border border-slate-300 p-2 shadow-2xl"
+            className="relative max-w-5xl max-h-[90vh] bg-white dark:bg-[#0f1924] rounded-2xl overflow-hidden border border-slate-300 dark:border-white/20 p-2 shadow-2xl transition-colors"
             onClick={(e) => e.stopPropagation()}
           >
             <button

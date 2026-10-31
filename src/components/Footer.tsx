@@ -1,24 +1,16 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight, ChevronUp, Check, ExternalLink } from 'lucide-react';
-import { useLang, type Language } from '../context/LanguageContext';
+import { ArrowRight } from 'lucide-react';
+import { useLang } from '../context/LanguageContext';
 
 export default function Footer() {
-  const [langOpen, setLangOpen] = useState(false);
-  const { language, setLanguage, t } = useLang();
-
-  const langOptions: { key: Language; label: string; flag: string }[] = [
-    { key: 'English', label: 'English', flag: '🇺🇸' },
-    { key: 'Hindi', label: 'हिंदी (Hindi)', flag: '🇮🇳' },
-    { key: 'Japanese', label: '日本語 (Japanese)', flag: '🇯🇵' },
-  ];
+  const { t } = useLang();
 
   return (
-    <footer className="relative bg-[#061a12] text-slate-300 border-t border-emerald-900/60 pt-16 pb-12 font-sans">
+    <footer className="relative bg-[#061a12] dark:bg-[#03100a] text-slate-300 border-t border-emerald-900/60 dark:border-emerald-950/80 pt-16 pb-12 font-sans transition-colors">
       
       {/* Top Banner Callout Strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
-        <div className="rounded-2xl p-8 sm:p-10 bg-[#0c281d] border border-emerald-800/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="rounded-2xl p-8 sm:p-10 bg-[#0c281d] dark:bg-[#061a12] border border-emerald-800/60 dark:border-emerald-900/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl transition-colors">
           <div className="max-w-2xl text-center md:text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-1">
               Precision Drone Spraying
@@ -44,7 +36,7 @@ export default function Footer() {
       </div>
 
       {/* Structured 4-Column Directory */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 border-b border-emerald-900/50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 border-b border-emerald-900/50 dark:border-emerald-950/70">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Col 1: Brand & Identity */}
@@ -53,7 +45,7 @@ export default function Footer() {
               <img 
                 src="/assets/img/logo/logo-blue.png" 
                 alt="Krishi Udaan" 
-                className="h-8 w-auto"
+                className="h-8 w-auto" 
               />
             </Link>
             <p className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
@@ -69,7 +61,7 @@ export default function Footer() {
                 href="https://www.instagram.com/krishi_udaan/" 
                 target="_blank" 
                 rel="noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-xs font-semibold text-emerald-200 transition-colors"
+                className="px-3 py-1.5 rounded-lg bg-emerald-900/60 dark:bg-emerald-950/80 hover:bg-emerald-800 text-xs font-semibold text-emerald-200 transition-colors"
                 aria-label="Krishi Udaan on Instagram"
               >
                 Instagram
@@ -78,7 +70,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@krishi_udaan/" 
                 target="_blank" 
                 rel="noreferrer"
-                className="px-3 py-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 text-xs font-semibold text-emerald-200 transition-colors"
+                className="px-3 py-1.5 rounded-lg bg-emerald-900/60 dark:bg-emerald-950/80 hover:bg-emerald-800 text-xs font-semibold text-emerald-200 transition-colors"
                 aria-label="Krishi Udaan on YouTube"
               >
                 YouTube
@@ -155,7 +147,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar: Copyright, Support Links, Language Dropdown */}
+      {/* Bottom Bar: Copyright, Support Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
@@ -172,49 +164,11 @@ export default function Footer() {
             </span>
           </div>
 
-          {/* Center Links & Language Selector */}
+          {/* Links */}
           <div className="flex flex-wrap items-center gap-5 text-xs text-slate-400">
             <Link to="/contact" className="hover:text-white transition-colors">Support</Link>
             <Link to="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link to="/contact" className="hover:text-white transition-colors">Terms and Conditions</Link>
-
-            {/* Language Selector Dropdown */}
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-700/50 text-xs font-medium text-emerald-200 transition-colors"
-              >
-                <span>{language === 'English' ? 'English' : language === 'Hindi' ? 'हिंदी (Hindi)' : '日本語 (Japanese)'}</span>
-                <ChevronUp className={`w-3 h-3 text-amber-400 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {langOpen && (
-                <div className="absolute bottom-full mb-2 right-0 w-36 rounded-xl bg-[#0c281d] border border-emerald-700 shadow-2xl p-1 z-50">
-                  {langOptions.map((opt) => (
-                    <button
-                      key={opt.key}
-                      onClick={() => {
-                        setLanguage(opt.key);
-                        setLangOpen(false);
-                      }}
-                      className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs transition-colors ${
-                        language === opt.key 
-                          ? 'bg-emerald-700 text-white font-bold' 
-                          : 'text-slate-300 hover:bg-emerald-800/80 hover:text-white'
-                      }`}
-                    >
-                      <span className="flex items-center gap-2">
-                        <span>{opt.flag}</span>
-                        <span>{opt.label}</span>
-                      </span>
-                      {language === opt.key && <Check className="w-3.5 h-3.5 text-amber-400" />}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
           </div>
 
         </div>
