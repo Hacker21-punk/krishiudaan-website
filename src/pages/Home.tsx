@@ -553,27 +553,131 @@ export default function Home() {
 
 
       {/* =========================================================================
-          PAN-INDIA OPERATIONS (Original india.png Asset Intact)
+          PAN-INDIA OPERATIONS (Original india.png Asset - Scaled & Elevated)
           ========================================================================= */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 lg:py-28 bg-gradient-to-b from-white via-slate-50 to-white border-b border-slate-200 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="max-w-2xl mx-auto mb-10">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
-              {t('Bringing Drones to')}
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-emerald-100 text-emerald-800 border border-emerald-200 mb-3">
+              <span>{t('Bringing Drones to')}</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
               {t('Every Corner of India')}
             </h2>
+            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              Deploying industrial drone fleets across agricultural belts. Certified pilots, rapid charging stations, and high-capacity spraying brought directly to farm gates.
+            </p>
           </div>
 
-          <div className="max-w-3xl mx-auto py-4 flex justify-center">
-            <img 
-              src="/assets/images/india.png" 
-              alt="Every Corner of India" 
-              className="max-h-[550px] w-auto object-contain filter drop-shadow-lg"
-              loading="lazy"
-            />
+          {/* Interactive Layout: Cards & Large Scaled Map */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            {/* Left Operational Highlights */}
+            <div className="lg:col-span-3 space-y-4 order-2 lg:order-1">
+              
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 font-bold">
+                  📍
+                </div>
+                <h4 className="text-sm font-bold text-slate-900 mb-1">
+                  Central Hub: Bhopal, MP
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Headquartered in Govindpura Industrial Area, dispatching rapid multi-drone teams across central Indian crop belts.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3 font-bold">
+                  ⚡
+                </div>
+                <h4 className="text-sm font-bold text-slate-900 mb-1">
+                  7-8 Min / Acre Speed
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Fast turnaround ensures critical fungicide and pesticide application in narrow morning and evening windows.
+                </p>
+              </div>
+
+            </div>
+
+            {/* Center: Large, Prominent India Map */}
+            <div className="lg:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2 py-4">
+              <div className="relative w-full flex justify-center">
+                <img 
+                  src="/assets/images/india.png" 
+                  alt="Every Corner of India" 
+                  className="w-auto h-[480px] sm:h-[620px] lg:h-[740px] xl:h-[780px] max-w-full object-contain filter drop-shadow-2xl hover:scale-[1.03] transition-transform duration-500 cursor-pointer"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* Subtle Map Caption Pill */}
+              <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-xs text-slate-700 font-semibold">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                <span>Active Commercial Flight Operations Across India</span>
+              </div>
+            </div>
+
+            {/* Right Operational Highlights */}
+            <div className="lg:col-span-3 space-y-4 order-3">
+              
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 font-bold">
+                  🚜
+                </div>
+                <h4 className="text-sm font-bold text-slate-900 mb-1">
+                  400+ Acres / Day Fleet
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Synchronized commercial multi-hexacopter units supported by mobile generator charging vehicles.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-3 font-bold">
+                  🌾
+                </div>
+                <h4 className="text-sm font-bold text-slate-900 mb-1">
+                  All Terrains &amp; Slopes
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Terrain-following radar maintains precise uniform spray height over valleys, terraces, and tall orchards.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Bottom Dispatch Inquiry Strip */}
+          <div className="mt-14 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-md flex flex-col sm:flex-row items-center justify-between gap-6 max-w-4xl mx-auto">
+            <div className="text-center sm:text-left">
+              <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-0.5">
+                Ready to Deploy in Your Region
+              </span>
+              <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+                Want spraying scheduled for your acreage or farmer collective?
+              </h3>
+            </div>
+            <div className="flex items-center gap-3 flex-shrink-0">
+              <Link
+                to="/contact"
+                className="px-5 py-2.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider transition-colors shadow-sm"
+              >
+                Book Dispatch
+              </Link>
+              <a
+                href="https://wa.me/919755675433"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-xl font-bold text-white bg-emerald-600 hover:bg-emerald-700 text-xs uppercase tracking-wider transition-colors shadow-sm"
+              >
+                WhatsApp Us
+              </a>
+            </div>
           </div>
 
         </div>
