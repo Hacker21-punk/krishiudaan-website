@@ -74,7 +74,7 @@ export default function Footer() {
             {/* Official Social Links */}
             <div className="pt-2 flex items-center gap-2.5">
               <a 
-                href="https://www.instagram.com/krishi_udaan/" 
+                href="https://www.instagram.com/krishiudaan.in?obrf=MWRvaG1nZndscXBrcw==" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 hover:border-emerald-600 text-xs font-semibold text-slate-700 hover:text-emerald-700 shadow-sm transition-all"
