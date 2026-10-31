@@ -103,7 +103,7 @@ const advantages = [
 const fullWidthAdvantage = {
  subtitle: 'Protection from Pests & Wildlife',
  title: 'Protection from Pests, Insects & Dangerous Animals',
- img: '/assets/images/danger.jpeg',
+ img: '/assets/images/pest.png',
  desc: 'Pesticide spraying is not just about safeguarding crops; it also shields farmers from potential dangers lurking in the fields. Fields can harbor disease-carrying pests and even venomous animals like snakes. Drone spraying acts as a proactive shield, drastically reducing the risk of pest bites, encounters with harmful animals, and health risks, ensuring that farmers can cultivate their lands with peace of mind.'
 };
 
@@ -382,7 +382,7 @@ export default function Home() {
  <div className="mt-6 rounded-2xl p-6 sm:p-8 bg-gradient-to-r from-emerald-50/70 via-white to-amber-50/40 border border-slate-200 flex flex-col md:flex-row items-center gap-6 shadow-sm transition-colors">
  <div className="w-36 h-36 md:w-48 md:h-40 rounded-xl bg-white p-3 flex-shrink-0 flex items-center justify-center border border-emerald-100 shadow-sm transition-colors">
  <img 
- src={fullWidthAdvantage.img} 
+ src={fullWidthAdvantage.img} onError={(e) => { (e.target as HTMLImageElement).src = '/assets/images/pest.png'; }} 
  alt={fullWidthAdvantage.title}
  className="max-h-32 max-w-full object-contain"
  loading="lazy"
@@ -429,7 +429,7 @@ export default function Home() {
  <div>
  <div className="w-16 h-16 rounded-xl bg-emerald-50/70 p-3 flex items-center justify-center mb-5 border border-emerald-100 transition-colors">
  <img 
- src={svc.img} 
+ src={svc.img} onError={(e) => { (e.target as HTMLImageElement).src = '/assets/images/expertize.png'; }} 
  alt={svc.title}
  className="max-h-full max-w-full object-contain"
  loading="lazy"
