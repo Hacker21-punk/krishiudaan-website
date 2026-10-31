@@ -7,19 +7,13 @@ import {
   Menu, 
   X, 
   ArrowRight,
-  MessageCircle,
-  Sun,
-  Moon
+  MessageCircle
 } from 'lucide-react';
-import { useLang } from '../context/LanguageContext';
-import { useTheme } from '../context/ThemeContext';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLang();
-  const { theme, toggleTheme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -34,10 +28,10 @@ export default function Header() {
   return (
     <>
       {/* Top Utility Bar - Deep Forest Green Professional Bar */}
-      <div className="bg-[#064e3b] dark:bg-[#03231a] text-emerald-100 text-xs py-2 px-4 sm:px-8 hidden md:block border-b border-emerald-700/50 dark:border-emerald-900/60 transition-colors">
+      <div className="bg-[#064e3b] text-emerald-100 text-xs py-2 px-4 sm:px-8 hidden md:block border-b border-emerald-700/50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-800/80 text-emerald-200 border border-emerald-600/50">
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-800 text-emerald-200 border border-emerald-600/50">
               Krishi Udaan
             </span>
             <span className="text-emerald-100/90 font-medium">
@@ -53,7 +47,7 @@ export default function Header() {
               <Phone className="w-3.5 h-3.5 text-amber-300" />
               <span>+91 97556 75433</span>
             </a>
-            <span className="text-emerald-700 dark:text-emerald-800">|</span>
+            <span className="text-emerald-700">|</span>
             <a 
               href="mailto:info@krishiudaan.in" 
               className="flex items-center gap-1.5 text-white hover:text-amber-300 transition-colors font-medium"
@@ -61,7 +55,7 @@ export default function Header() {
               <Mail className="w-3.5 h-3.5 text-amber-300" />
               <span>info@krishiudaan.in</span>
             </a>
-            <span className="text-emerald-700 dark:text-emerald-800">|</span>
+            <span className="text-emerald-700">|</span>
             <span className="flex items-center gap-1.5 text-emerald-200/90">
               <MapPin className="w-3.5 h-3.5 text-emerald-300" />
               <span>Bhopal, MP</span>
@@ -74,8 +68,8 @@ export default function Header() {
       <header 
         className={`sticky top-0 z-40 transition-all duration-200 ${
           scrolled 
-            ? 'bg-white/95 dark:bg-[#080e15]/95 backdrop-blur-md shadow-md border-b border-slate-200 dark:border-white/10 py-3' 
-            : 'bg-white dark:bg-[#080e15] border-b border-slate-200 dark:border-white/10 py-3.5'
+            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200 py-3' 
+            : 'bg-white border-b border-slate-200 py-3.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +77,7 @@ export default function Header() {
             
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
-              <div className="p-1 rounded-lg bg-transparent dark:bg-white/95 transition-colors">
+              <div className="p-1 rounded-lg">
                 <img 
                   src="/assets/img/logo/logo-blue.png" 
                   alt="Krishi Udaan" 
@@ -93,69 +87,48 @@ export default function Header() {
             </Link>
 
             {/* Desktop Navigation Links - Clean, High Contrast Slate */}
-            <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700 dark:text-slate-200">
+            <nav className="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
               <Link 
                 to="/" 
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-700 transition-colors"
               >
-                {t('Home')}
+                Home
               </Link>
               <a 
                 href="/#advantages" 
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-700 transition-colors"
               >
-                {t('Advantages')}
+                Advantages
               </a>
               <a 
                 href="/#services" 
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-700 transition-colors"
               >
-                {t('Services')}
+                Services
               </a>
               <a 
                 href="/#gallery" 
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-700 transition-colors"
               >
-                {t('Gallery')}
+                Field Gallery
               </a>
               <Link 
                 to="/about" 
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-700 transition-colors"
               >
-                {t('About Us')}
+                About Us
               </Link>
               <Link 
                 to="/contact" 
-                className="hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
+                className="hover:text-emerald-700 transition-colors"
               >
-                {t('Contact')}
+                Contact
               </Link>
             </nav>
 
-            {/* Right Controls: Theme Toggle + WhatsApp CTA + Book Spraying + Menu Hamburger */}
+            {/* Right Controls: WhatsApp CTA + Book Spraying + Menu Hamburger */}
             <div className="flex items-center gap-2.5 sm:gap-3">
               
-              {/* Theme Toggle Button (Light / Dark) */}
-              <button
-                type="button"
-                onClick={toggleTheme}
-                className="p-2 sm:px-3 sm:py-2 rounded-xl border border-slate-200 dark:border-white/15 bg-slate-50 dark:bg-slate-800/80 text-slate-700 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-700/80 transition-all flex items-center gap-2 shadow-sm"
-                aria-label={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-                title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              >
-                {theme === 'dark' ? (
-                  <>
-                    <Sun className="w-4 h-4 text-amber-400 animate-in spin-in-90 duration-300" />
-                    <span className="hidden md:inline text-xs font-bold text-slate-200">Light</span>
-                  </>
-                ) : (
-                  <>
-                    <Moon className="w-4 h-4 text-slate-700 animate-in spin-in-90 duration-300" />
-                    <span className="hidden md:inline text-xs font-bold text-slate-700">Dark</span>
-                  </>
-                )}
-              </button>
-
               {/* WhatsApp Quick Chat */}
               <a
                 href="https://wa.me/919755675433"
@@ -180,7 +153,7 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => setOffcanvasOpen(true)}
-                className="p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-white/10 transition-colors"
+                className="p-2 rounded-xl text-slate-700 hover:text-emerald-700 hover:bg-slate-100 border border-slate-200 transition-colors"
                 aria-label="Open detailed menu"
               >
                 <Menu className="w-5 h-5" />
@@ -204,12 +177,12 @@ export default function Header() {
           />
 
           {/* Offcanvas Drawer Content */}
-          <div className="relative w-full max-w-sm bg-white dark:bg-[#0a121c] text-slate-800 dark:text-slate-100 shadow-2xl p-6 sm:p-8 overflow-y-auto flex flex-col justify-between z-10 border-l border-slate-200 dark:border-white/10 transition-colors">
+          <div className="relative w-full max-w-sm bg-white text-slate-800 shadow-2xl p-6 sm:p-8 overflow-y-auto flex flex-col justify-between z-10 border-l border-slate-200">
             
             {/* Top Bar inside Sidebar */}
             <div>
-              <div className="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-white/10">
-                <div className="p-1 rounded-lg bg-transparent dark:bg-white/95">
+              <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+                <div className="p-1 rounded-lg">
                   <img 
                     src="/assets/img/logo/logo-blue.png" 
                     alt="Krishi Udaan" 
@@ -219,7 +192,7 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={() => setOffcanvasOpen(false)}
-                  className="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
                   aria-label="Close sidebar"
                 >
                   <X className="w-5 h-5" />
@@ -227,133 +200,99 @@ export default function Header() {
               </div>
 
               {/* Navigation Links for Mobile Drawer */}
-              <div className="py-4 border-b border-slate-200 dark:border-white/10 lg:hidden">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 block mb-2">
+              <div className="py-4 border-b border-slate-200 lg:hidden">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mb-2">
                   Navigation
                 </span>
                 <nav className="flex flex-col space-y-2 text-sm font-semibold">
                   <Link 
                     to="/" 
                     onClick={() => setOffcanvasOpen(false)}
-                    className="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800"
                   >
                     Home
                   </Link>
                   <a 
                     href="/#advantages" 
                     onClick={() => setOffcanvasOpen(false)}
-                    className="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800"
                   >
                     Advantages
                   </a>
                   <a 
                     href="/#services" 
                     onClick={() => setOffcanvasOpen(false)}
-                    className="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800"
                   >
                     Services
                   </a>
                   <a 
                     href="/#gallery" 
                     onClick={() => setOffcanvasOpen(false)}
-                    className="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800"
                   >
                     Field Gallery
                   </a>
                   <Link 
                     to="/about" 
                     onClick={() => setOffcanvasOpen(false)}
-                    className="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800"
                   >
                     About Us
                   </Link>
                   <Link 
                     to="/contact" 
                     onClick={() => setOffcanvasOpen(false)}
-                    className="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-800 dark:text-slate-200"
+                    className="px-3 py-2 rounded-lg hover:bg-slate-100 text-slate-800"
                   >
                     Contact &amp; Booking
                   </Link>
                 </nav>
               </div>
 
-              {/* Appearance / Theme Selector */}
-              <div className="py-4 border-b border-slate-200 dark:border-white/10">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 block mb-2">
-                  Theme Appearance
-                </span>
-                <div className="grid grid-cols-2 gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setTheme('light')}
-                    className={`py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 border transition-all ${
-                      theme === 'light'
-                        ? 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 border-emerald-400 shadow-sm'
-                        : 'bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-slate-800'
-                    }`}
-                  >
-                    <Sun className="w-3.5 h-3.5 text-amber-500" />
-                    <span>Light Mode</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setTheme('dark')}
-                    className={`py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-2 border transition-all ${
-                      theme === 'dark'
-                        ? 'bg-slate-800 text-amber-400 border-amber-500/50 shadow-sm'
-                        : 'bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-white/10 hover:bg-slate-100 dark:hover:bg-slate-800'
-                    }`}
-                  >
-                    <Moon className="w-3.5 h-3.5 text-slate-400" />
-                    <span>Dark Mode</span>
-                  </button>
-                </div>
-              </div>
-
               {/* Company Introduction */}
               <div className="pt-4 pb-4">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 block mb-1">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700 block mb-1">
                   Hanron Tech Innovations Pvt. Ltd.
                 </span>
-                <h3 className="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                <h3 className="text-base font-bold text-slate-900 leading-snug">
                   Precision Agricultural Drone Spraying &amp; Fleet Logistics
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
                   High-capacity drone spraying across Indian farmlands. 400+ acres daily capacity, 90% water saving, and complete farmer protection from toxic chemicals.
                 </p>
               </div>
 
               {/* Contact Details List */}
               <div className="space-y-3 pt-1">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 block">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block">
                   Operations Headquarters
                 </span>
 
                 {/* Address */}
-                <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <div className="text-xs leading-relaxed text-slate-700 dark:text-slate-300">
-                    <b className="text-slate-900 dark:text-white">Hanron Tech Innovations Pvt. Ltd.</b><br />
+                  <div className="text-xs leading-relaxed text-slate-700">
+                    <b className="text-slate-900">Hanron Tech Innovations Pvt. Ltd.</b><br />
                     Plot No. 23-B, Sector - D, Near CIPET, JK Road, Govindpura Industrial Area, Bhopal, MP 462023
                   </div>
                 </div>
 
                 {/* Phone */}
-                <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div className="text-xs space-y-1">
                     <div>
-                      <a href="tel:+919755675433" className="font-semibold text-slate-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400">
+                      <a href="tel:+919755675433" className="font-semibold text-slate-900 hover:text-emerald-700">
                         +91 97556 75433 (Direct Mobile)
                       </a>
                     </div>
                     <div>
-                      <a href="tel:+917554331833" className="text-slate-600 dark:text-slate-400 hover:text-emerald-700 dark:hover:text-emerald-400">
+                      <a href="tel:+917554331833" className="text-slate-600 hover:text-emerald-700">
                         +91 755 4331833 (Office Landline)
                       </a>
                     </div>
@@ -361,12 +300,12 @@ export default function Header() {
                 </div>
 
                 {/* Email */}
-                <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#0f1924] border border-slate-200 dark:border-white/10 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center flex-shrink-0">
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="text-xs">
-                    <a href="mailto:info@krishiudaan.in" className="font-semibold text-slate-900 dark:text-white hover:text-emerald-700 dark:hover:text-emerald-400">
+                    <a href="mailto:info@krishiudaan.in" className="font-semibold text-slate-900 hover:text-emerald-700">
                       info@krishiudaan.in
                     </a>
                   </div>
@@ -377,7 +316,7 @@ export default function Header() {
             </div>
 
             {/* Bottom Actions inside Sidebar */}
-            <div className="pt-6 border-t border-slate-200 dark:border-white/10 space-y-2.5">
+            <div className="pt-6 border-t border-slate-200 space-y-2.5">
               <Link
                 to="/contact"
                 onClick={() => setOffcanvasOpen(false)}

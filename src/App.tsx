@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -11,6 +11,17 @@ import { ArrowUp, MessageCircle } from 'lucide-react';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
+
+  // Restore path if redirected from 404 fallback
+  useEffect(() => {
+    const redirectPath = sessionStorage.getItem('redirectPath');
+    if (redirectPath && redirectPath !== '/') {
+      sessionStorage.removeItem('redirectPath');
+      navigate(redirectPath, { replace: true });
+    }
+  }, [navigate]);
+
   useEffect(() => {
     if (!hash) {
       window.scrollTo(0, 0);
@@ -21,6 +32,7 @@ function ScrollToTop() {
       }
     }
   }, [pathname, hash]);
+
   return null;
 }
 
@@ -51,7 +63,7 @@ function FloatingActions() {
       {visible && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="pointer-events-auto w-11 h-11 rounded-full bg-white dark:bg-[#0f1924] hover:bg-slate-50 dark:hover:bg-[#152332] text-slate-700 dark:text-slate-200 hover:text-emerald-700 dark:hover:text-emerald-400 border border-slate-300 dark:border-white/15 shadow-xl flex items-center justify-center transition-all hover:scale-110"
+          className="pointer-events-auto w-11 h-11 rounded-full bg-white hover:bg-slate-50 text-slate-700 hover:text-emerald-700 border border-slate-300 shadow-xl flex items-center justify-center transition-all hover:scale-110"
           aria-label="Scroll back to top"
         >
           <ArrowUp className="w-5 h-5" />
