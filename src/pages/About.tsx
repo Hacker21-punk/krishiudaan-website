@@ -2,160 +2,169 @@ import { Link } from 'react-router-dom';
 import { 
   ShieldCheck, 
   Droplet, 
-  Sparkles, 
   Award, 
   MapPin, 
   Phone, 
   Mail, 
   ArrowRight, 
   CheckCircle2, 
-  Compass, 
-  Layers, 
   Activity, 
-  Users
+  Compass,
+  Zap,
+  Building2,
+  ExternalLink
 } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
 
 export default function About() {
   const { t } = useLang();
 
-  const milestones = [
-    {
-      year: '2014',
-      title: 'Foundation & Aeronautical Research',
-      desc: 'Hanron Tech Innovations was initiated with a focus on advanced UAV systems, telemetry, and automated flight controllers.'
-    },
-    {
-      year: '2018',
-      title: 'Agricultural Drone Prototyping',
-      desc: 'Engineered our first high-payload hexacopters designed specifically for Indian field crop protection and uniform spray dosage.'
-    },
-    {
-      year: '2021',
-      title: 'Centrifugal Atomization & Radar Integration',
-      desc: 'Pioneered terrain-following radar systems allowing autonomous flights across hilly farmlands, orchards, and uneven valleys.'
-    },
-    {
-      year: '2024+',
-      title: 'Pan-India Fleet Deployment (400+ Acres/Day)',
-      desc: 'Scaled operations to large-scale spraying capacity, serving thousands of farming acres across Madhya Pradesh and central India.'
-    }
-  ];
-
-  const coreValues = [
+  const corePillars = [
     {
       icon: Droplet,
       title: '90% Water Conservation',
-      desc: 'Replacing wasteful flood-spraying with micro-droplet atomization that requires only 8-10 litres of water per acre compared to 100-200 litres traditionally.'
+      desc: 'Replacing conventional flood-spraying with high-pressure micro-droplet atomization. Our systems require only 8 to 10 litres of water per acre compared to 100 to 200 litres used in manual methods.'
     },
     {
       icon: ShieldCheck,
-      title: 'Farmer Safety & Zero Toxicity Exposure',
-      desc: 'Eliminating the health risks of farmers carrying heavy backpack tanks and inhaling toxic chemical mist in intense heat.'
+      title: 'Zero Pesticide Exposure',
+      desc: 'Eliminating the acute health hazards of agricultural laborers carrying heavy manual backpack tanks through muddy crops under intense heat and breathing toxic chemical vapor.'
     },
     {
       icon: Activity,
       title: 'Zero Soil Compaction',
-      desc: 'Aerial flight preserves soil pore structure and root aeration without crushing growing crops like heavy tractors do.'
+      desc: 'Aerial flight preserves soil pore structure and root respiration without the soil-crushing weight of heavy tractor sprayers that damage growing roots and reduce final crop yield.'
     },
     {
-      icon: Sparkles,
-      title: 'Precision Micro-Dosage',
-      desc: 'Uniform droplet distribution directly onto plant canopies prevents groundwater runoff and cuts fertilizer expenses by up to 30%.'
+      icon: Zap,
+      title: 'Rapid 7-8 Min / Acre Turnaround',
+      desc: 'High-payload commercial hexacopters ensure swift disease and pest intervention during critical agronomic spray windows, with fleet capacity exceeding 400 acres per day.'
     }
   ];
 
+  const operationalHighlights = [
+    { stat: '400+', label: 'Acres / Day', desc: 'Commercial fleet spraying capacity across agricultural belts' },
+    { stat: '7-8', label: 'Minutes / Acre', desc: 'Rapid field turnaround compared to hours of manual spraying' },
+    { stat: '90%', label: 'Water Conserved', desc: 'Micro-atomized droplet technology saves crucial water resources' },
+    { stat: '100%', label: 'Operator Safety', desc: 'Zero manual contact or toxic inhalation during chemical dispersion' },
+  ];
+
   return (
-    <div className="bg-slate-950 text-slate-100">
+    <div className="bg-[#0a1118] text-slate-100 font-sans selection:bg-amber-400 selection:text-slate-950">
       
       {/* Hero Header */}
-      <section className="relative pt-16 pb-24 overflow-hidden border-b border-white/5 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <section className="relative pt-16 pb-20 border-b border-white/[0.06] bg-[#0c141d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Over a Decade of Innovation</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 mb-4">
+            Industrial Drone Aviation
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
-            Pioneering the Skies to <br className="hidden sm:inline" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-amber-400">
-              Transform Indian Agriculture
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Precision Agricultural Drone Spraying <br className="hidden sm:inline" />
+            <span className="text-amber-400">
+              Engineered for Indian Agriculture
             </span>
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Krishi Udaan, an initiative by Hanron Tech Innovations Pvt. Ltd., combines aerospace precision with deep agricultural understanding to solve India's toughest farming challenges.
+            Krishi Udaan, an initiative by Hanron Tech Innovations Pvt. Ltd., combines industrial-grade UAV technology with agronomic precision to solve India's most urgent farming challenges.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-lg shadow-amber-500/20 text-sm transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-md text-sm transition-all"
             >
               <span>Schedule a Field Demonstration</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-white/5 hover:bg-white/10 border border-white/10 text-sm transition-all"
+            <a
+              href="https://wa.me/919755675433"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-sm transition-all"
             >
-              <span>Explore Our Services</span>
-            </Link>
+              <span>WhatsApp Flight Director</span>
+            </a>
           </div>
 
         </div>
       </section>
 
+      {/* Operational Stats Strip */}
+      <section className="py-12 bg-[#070d14] border-b border-white/[0.06]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {operationalHighlights.map((item, idx) => (
+              <div 
+                key={idx}
+                className="p-6 rounded-2xl bg-[#0e1722] border border-white/[0.06] text-center sm:text-left"
+              >
+                <div className="text-3xl sm:text-4xl font-black text-amber-400">
+                  {item.stat}
+                </div>
+                <div className="text-xs font-bold text-white uppercase tracking-wider mt-1">
+                  {item.label}
+                </div>
+                <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Story & Background Section */}
-      <section className="py-20 bg-slate-950 relative">
+      {/* Company Mission & Base Section */}
+      <section className="py-20 bg-[#0a1118] border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-6 space-y-5">
               <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block">
-                Our Heritage &amp; Mission
+                Corporate Profile &amp; Mission
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-snug">
-                Building Tomorrow’s Precision Agri-Tech from Bhopal to Every Corner of India
+                Industrial UAV Fleet Operations Headquartered in Bhopal, MP
               </h2>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Indian farmers face intensifying challenges: severe groundwater depletion, labor shortages during critical spraying windows, escalating chemical costs, and direct health hazards from toxic pesticide exposure.
+                Indian farmers confront intensifying structural pressures: critical groundwater depletion, acute labor shortages during tight spraying seasons, escalating fertilizer expenses, and direct toxic exposure from manual backpack spraying.
               </p>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Founded by engineers with deep aerospace expertise, <b>Hanron Tech Innovations Pvt. Ltd.</b> launched <b>Krishi Udaan</b> to provide accessible, industrial-grade aerial spraying services. Our smart drones spray 1 acre of crops in just 7 to 8 minutes with uniform micron atomization, cutting water usage by 90% and protecting farmers from hazardous contact.
+                <b className="text-white">Hanron Tech Innovations Pvt. Ltd.</b> established <b className="text-emerald-400">Krishi Udaan</b> to deliver an industrial-grade aerial spraying service. Utilizing advanced flight stabilization and precision atomizing nozzles, our drones spray 1 acre in just 7 to 8 minutes with uniform micron coverage, preserving 90% of water and completely safeguarding farmers from hazardous chemicals.
               </p>
-              
-              <div className="pt-4 grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-slate-900 border border-white/5">
-                  <div className="text-2xl font-black text-amber-400">400+</div>
-                  <div className="text-xs font-semibold text-slate-200 mt-1">Acres Daily Capacity</div>
-                  <div className="text-[10px] text-slate-400">Rapid dispatch fleet</div>
+
+              {/* Office Location Box */}
+              <div className="p-5 rounded-2xl bg-[#0e1722] border border-white/[0.06] flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/20">
+                  <MapPin className="w-5 h-5" />
                 </div>
-                <div className="p-4 rounded-2xl bg-slate-900 border border-white/5">
-                  <div className="text-2xl font-black text-emerald-400">100%</div>
-                  <div className="text-xs font-semibold text-slate-200 mt-1">Farmer Safety</div>
-                  <div className="text-[10px] text-slate-400">Zero direct exposure</div>
+                <div className="text-xs text-slate-300 leading-relaxed">
+                  <span className="font-bold text-white block uppercase tracking-wider text-[11px] mb-0.5">
+                    Central Facility &amp; Flight Logistics
+                  </span>
+                  <span>Hanron Tech Innovations Pvt. Ltd.</span><br />
+                  <span>Plot No. 23-B, Sector - D, Near CIPET, JK Road, Govindpura Industrial Area, Bhopal, MP 462023</span>
                 </div>
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <div className="relative rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl bg-slate-900">
+              <div className="relative rounded-2xl overflow-hidden border border-white/[0.08] shadow-2xl bg-[#121c27]">
                 <img
                   src="/assets/images/fleet.jpg"
-                  alt="Krishi Udaan Drone Fleet in Bhopal"
-                  className="w-full h-[400px] object-cover"
+                  alt="Krishi Udaan Fleet in Bhopal"
+                  className="w-full h-[420px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-white/10">
-                  <span className="text-xs font-bold text-emerald-400 block uppercase tracking-wider">
-                    Operational Base: Bhopal, MP
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1118] via-transparent to-transparent opacity-80" />
+                
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#0a1118]/90 backdrop-blur-md border border-white/10">
+                  <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">
+                    Pan-India Service Reach
                   </span>
-                  <p className="text-xs text-slate-300 mt-1">
-                    Plot No. 23-B, Sector - D, Govindpura Industrial Area. Full assembly, maintenance, and pilot training facility.
+                  <p className="text-xs text-slate-200 mt-0.5 font-medium">
+                    Equipped for flat fields, undulating terrains, and fruit orchards across India.
                   </p>
                 </div>
               </div>
@@ -165,27 +174,27 @@ export default function About() {
         </div>
       </section>
 
-
-      {/* Core Values / Four Pillars */}
-      <section className="py-20 bg-slate-900/60 border-y border-white/5">
+      {/* Core Principles (4 Pillars) */}
+      <section className="py-20 bg-[#070d14] border-b border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-2">
-              Our Principles
+          
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+              Core Principles
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Why Krishi Udaan Leads Agri-Drone Solutions
+              Why Agriculture Chooses Krishi Udaan
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coreValues.map((val, idx) => (
+            {corePillars.map((val, idx) => (
               <div 
                 key={idx}
-                className="p-6 rounded-3xl bg-slate-900/90 border border-white/5 hover:border-emerald-500/40 transition-all flex flex-col justify-between"
+                className="p-6 rounded-2xl bg-[#0e1722] border border-white/[0.06] flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5 border border-emerald-500/20">
+                  <div className="w-12 h-12 rounded-xl bg-[#080e15] text-emerald-400 flex items-center justify-center mb-5 border border-white/[0.04]">
                     <val.icon className="w-6 h-6 text-emerald-400" />
                   </div>
                   <h3 className="text-base font-bold text-white mb-2 leading-snug">
@@ -198,64 +207,26 @@ export default function About() {
               </div>
             ))}
           </div>
+
         </div>
       </section>
-
-
-      {/* Innovation Timeline */}
-      <section className="py-20 bg-slate-950">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-400 block mb-2">
-              Our Journey
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              A Decade of Relentless Engineering
-            </h2>
-          </div>
-
-          <div className="relative border-l border-emerald-500/30 ml-4 sm:ml-32 space-y-10 pl-6 sm:pl-8">
-            {milestones.map((m, idx) => (
-              <div key={idx} className="relative group">
-                {/* Year Badge */}
-                <div className="sm:absolute sm:-left-36 sm:top-0 mb-2 sm:mb-0">
-                  <span className="inline-block px-3 py-1 rounded-lg text-xs font-black bg-amber-400 text-slate-950 shadow-md">
-                    {m.year}
-                  </span>
-                </div>
-
-                {/* Dot */}
-                <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-950 border-2 border-emerald-400 group-hover:scale-125 transition-transform" />
-
-                <div className="p-6 rounded-2xl bg-slate-900/80 border border-white/5 hover:border-emerald-500/30 transition-colors">
-                  <h4 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
-                    {m.title}
-                  </h4>
-                  <p className="text-xs text-slate-300 mt-1.5 leading-relaxed">
-                    {m.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
 
       {/* Contact Callout Strip */}
-      <section className="py-16 bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-950 border-t border-emerald-500/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+      <section className="py-14 bg-[#0c141d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
-            <h3 className="text-2xl font-bold text-white">Have questions about our technology or pilots?</h3>
-            <p className="text-xs sm:text-sm text-slate-300 mt-1">
-              Visit our central engineering office in Bhopal or speak with our flight directors.
+            <h3 className="text-xl sm:text-2xl font-bold text-white">
+              Ready to schedule aerial spraying for your fields?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+              Connect with our Bhopal operations team to confirm drone dispatch dates and acreage packages.
             </p>
           </div>
           <Link
             to="/contact"
-            className="px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider shadow-lg transition-all"
+            className="px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider shadow-md transition-colors flex-shrink-0"
           >
-            Get In Touch
+            Contact Operations
           </Link>
         </div>
       </section>

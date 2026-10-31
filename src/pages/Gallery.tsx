@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Maximize2, X, ArrowRight, Droplet, CheckCircle2 } from 'lucide-react';
+import { Maximize2, X, ArrowRight } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
 
 const galleryImages = [
@@ -36,26 +36,26 @@ export default function Gallery() {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   return (
-    <div className="bg-slate-950 text-slate-100 min-h-screen">
+    <div className="bg-[#0a1118] text-slate-100 min-h-screen font-sans selection:bg-amber-400 selection:text-slate-950">
       
       {/* Hero Header */}
-      <section className="relative pt-16 pb-20 overflow-hidden border-b border-white/5 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Field Archives &amp; Flight Records</span>
+      <section className="relative pt-16 pb-20 border-b border-white/[0.06] bg-[#0c141d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 mb-4">
+            Field Operations Archive
           </div>
 
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight">
             Agricultural Drone Field Operations Gallery
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto">
+          <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Authentic photographs of Krishi Udaan agricultural drones, certified flight pilots, mobile generator stations, and operational farmlands across India.
           </p>
 
-          <div className="mt-6 flex items-center justify-center gap-4 text-xs text-slate-400">
-            <span>25 High-Resolution Captures</span>
+          <div className="mt-6 flex items-center justify-center gap-3 text-xs text-slate-400">
+            <span className="font-semibold text-amber-400">25 High-Resolution Captures</span>
             <span>•</span>
             <span>Click any image to enlarge</span>
           </div>
@@ -63,22 +63,22 @@ export default function Gallery() {
       </section>
 
       {/* Grid of 25 Images */}
-      <section className="py-16">
+      <section className="py-16 bg-[#0a1118]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {galleryImages.map((img, i) => (
               <div
                 key={i}
-                className="group relative rounded-2xl overflow-hidden bg-slate-900 border border-white/10 hover:border-emerald-500/50 transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-2xl cursor-pointer aspect-square"
+                className="group relative rounded-2xl overflow-hidden bg-[#0e1722] border border-white/[0.06] hover:border-amber-400/50 transition-all duration-300 shadow-lg cursor-pointer aspect-square"
                 onClick={() => setSelectedImg(img)}
               >
                 <img
                   src={img}
                   alt={`Krishi Udaan Field Operation ${i + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                   <div className="flex items-center justify-between w-full text-xs font-bold text-white">
                     <span>Field Capture #{i + 1}</span>
                     <div className="p-1.5 rounded-lg bg-amber-400 text-slate-950">
@@ -94,36 +94,37 @@ export default function Gallery() {
           <div className="mt-16 text-center">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-xs uppercase tracking-wider shadow-lg transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider shadow-md transition-colors"
             >
               <span>Schedule Spraying on Your Land</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
+
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* Full Screen Lightbox Modal */}
       {selectedImg && (
-        <div 
-          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4"
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={() => setSelectedImg(null)}
         >
           <div 
-            className="relative max-w-4xl max-h-[90vh] bg-slate-900 rounded-3xl overflow-hidden border border-white/10 shadow-2xl p-2"
+            className="relative max-w-5xl max-h-[90vh] bg-[#0c141d] rounded-2xl overflow-hidden border border-white/10 p-2"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedImg(null)}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-slate-950/80 text-white hover:bg-red-500 transition-colors"
-              aria-label="Close image modal"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/70 text-white hover:bg-red-500 transition-colors"
+              aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
             <img
               src={selectedImg}
-              alt="Krishi Udaan Field Spraying Full View"
-              className="max-h-[82vh] w-auto object-contain rounded-2xl mx-auto"
+              alt="Krishi Udaan Field Gallery High Resolution"
+              className="max-h-[82vh] w-auto object-contain rounded-xl mx-auto"
             />
           </div>
         </div>

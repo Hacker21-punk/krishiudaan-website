@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Sparkles, 
   Droplet, 
   Clock, 
   ShieldCheck, 
@@ -10,8 +9,7 @@ import {
   ArrowRight, 
   Activity, 
   Compass, 
-  PhoneCall,
-  Sliders
+  PhoneCall
 } from 'lucide-react';
 import { useLang } from '../context/LanguageContext';
 
@@ -25,7 +23,7 @@ export default function Services() {
       title: 'Precision Fertilizer & Nutrient Spraying',
       subtitle: 'Targeted Micron Liquid Nourishment',
       image: '/assets/images/Uniform-Spraying.png',
-      badge: 'Most Popular',
+      badge: 'High Precision',
       stats: '90% Water Saved • 7-8 Mins/Acre',
       desc: 'Our drones atomize liquid fertilizers and micro-nutrients into ultra-fine droplets (100–150 microns), ensuring uniform leaf surface absorption. Prevents nutrient leaching into the ground, saving costs and maximizing crop uptake.',
       benefits: [
@@ -40,7 +38,7 @@ export default function Services() {
       title: 'Pesticide & Insecticide Pest Shield',
       subtitle: '100% Farmer Safety • Zero Direct Handling',
       image: '/assets/images/chemical_safety.png',
-      badge: 'Critical Safety',
+      badge: 'Operator Safety',
       stats: 'Zero Human Exposure • Rapid Coverage',
       desc: 'Eliminate the health hazards of carrying manual backpack pumps through dense fields. Our automated drones spray insecticides and fungicides from a controlled 2–3 meter altitude, creating a downward propeller downdraft that deposits protection deep into crop canopies.',
       benefits: [
@@ -55,9 +53,9 @@ export default function Services() {
       title: 'Aerial Crop Health & Multispectral Monitoring',
       subtitle: 'Data-Driven Precision Agriculture',
       image: '/assets/images/crop-health.jpeg',
-      badge: 'Smart Data',
-      stats: 'NDVI Analytics • Early Pest Detection',
-      desc: 'Equipped with multispectral optical sensors, our scouting flights generate high-resolution NDVI vegetation index maps, pinpointing crop stress, irrigation deficits, fungal infections, and weed outbreaks weeks before they become visible to the naked eye.',
+      badge: 'Optical Sensors',
+      stats: 'Early Pest Detection • Real-time Data',
+      desc: 'Equipped with multispectral optical sensors, our scouting flights generate high-resolution vegetation index maps, pinpointing crop stress, irrigation deficits, fungal infections, and weed outbreaks before they become visible to the naked eye.',
       benefits: [
         'Early weed and fungal infection detection',
         'Variable-rate spraying maps to treat only affected patches',
@@ -86,7 +84,7 @@ export default function Services() {
       subtitle: 'Precision Flying on Slopes, Terraces & Valleys',
       image: '/assets/images/terrain.png',
       badge: 'All Terrains',
-      stats: 'Millimeter Radar Tracking • Steep Slopes',
+      stats: 'Radar Tracking • Steep Slopes',
       desc: 'Tractors and wheeled sprayers struggle on steep gradients and rocky ground. Our drones utilize millimeter-wave terrain-following radar to continuously adjust altitude above rolling hills, orchards, and terraced farmlands.',
       benefits: [
         'Safe spraying on steep hill gradients and rocky topography',
@@ -121,21 +119,19 @@ export default function Services() {
   ];
 
   return (
-    <div className="bg-slate-950 text-slate-100">
+    <div className="bg-[#0a1118] text-slate-100 font-sans selection:bg-amber-400 selection:text-slate-950">
       
       {/* Services Hero */}
-      <section className="relative pt-16 pb-20 overflow-hidden border-b border-white/5 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div className="absolute top-0 left-1/3 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <section className="relative pt-16 pb-20 border-b border-white/[0.06] bg-[#0c141d]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Industrial-Grade Agri-Drone Services</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md text-xs font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 mb-4">
+            Industrial Agri-Drone Services
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
             Precision Agricultural Drone Spraying <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-emerald-300 to-amber-400">
+            <span className="text-amber-400">
               Engineered for Indian Fields
             </span>
           </h1>
@@ -147,7 +143,7 @@ export default function Services() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-lg text-sm transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-md text-sm transition-all"
             >
               <span>Book Drone Spraying Now</span>
               <ArrowRight className="w-4 h-4" />
@@ -156,9 +152,9 @@ export default function Services() {
               href="https://wa.me/919755675433"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-emerald-400 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 text-sm transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-slate-200 bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-sm transition-all"
             >
-              <PhoneCall className="w-4 h-4" />
+              <PhoneCall className="w-4 h-4 text-emerald-400" />
               <span>Direct WhatsApp Hotline</span>
             </a>
           </div>
@@ -166,13 +162,12 @@ export default function Services() {
         </div>
       </section>
 
-
       {/* Interactive Service Explorer */}
-      <section className="py-20 bg-slate-950">
+      <section className="py-20 bg-[#0a1118]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
               Comprehensive Capabilities
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -188,8 +183,8 @@ export default function Services() {
                 onClick={() => setSelectedService(i)}
                 className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 ${
                   selectedService === i
-                    ? 'bg-emerald-500 text-slate-950 shadow-lg shadow-emerald-500/20 scale-105'
-                    : 'bg-slate-900 text-slate-300 hover:bg-slate-800 border border-white/5'
+                    ? 'bg-amber-400 text-slate-950 shadow-md'
+                    : 'bg-[#0e1722] text-slate-300 hover:bg-[#14202e] border border-white/[0.06]'
                 }`}
               >
                 <span>{svc.title.split(' ')[0]} {svc.title.split(' ')[1]}</span>
@@ -201,25 +196,25 @@ export default function Services() {
           {(() => {
             const svc = serviceOfferings[selectedService];
             return (
-              <div className="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/30 shadow-2xl">
+              <div className="rounded-2xl p-8 sm:p-12 bg-[#0e1722] border border-white/[0.06] shadow-xl">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                   
                   {/* Visual */}
-                  <div className="lg:col-span-5 rounded-2xl bg-slate-950 p-6 border border-white/10 flex items-center justify-center">
+                  <div className="lg:col-span-5 rounded-xl bg-[#080e15] p-6 border border-white/[0.04] flex items-center justify-center">
                     <img
                       src={svc.image}
                       alt={svc.title}
-                      className="max-h-72 w-auto object-contain filter drop-shadow-xl"
+                      className="max-h-72 w-auto object-contain"
                     />
                   </div>
 
                   {/* Details */}
                   <div className="lg:col-span-7 space-y-4">
                     <div className="flex items-center gap-3">
-                      <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-400 text-slate-950">
+                      <span className="px-3 py-1 rounded-md text-[10px] font-extrabold uppercase tracking-wider bg-emerald-500/10 text-emerald-400 border border-emerald-500/25">
                         {svc.badge}
                       </span>
-                      <span className="text-xs font-semibold text-emerald-400">
+                      <span className="text-xs font-semibold text-amber-400">
                         {svc.stats}
                       </span>
                     </div>
@@ -227,7 +222,7 @@ export default function Services() {
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                       {svc.title}
                     </h3>
-                    <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
                       {svc.subtitle}
                     </p>
 
@@ -248,10 +243,10 @@ export default function Services() {
                     <div className="pt-6">
                       <Link
                         to="/contact"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider shadow-md transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider transition-colors"
                       >
-                        <span>Request Spraying for this Service</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                        <span>Book This Service</span>
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
 
@@ -265,68 +260,40 @@ export default function Services() {
         </div>
       </section>
 
-
-      {/* Workflow Process */}
-      <section className="py-20 bg-slate-900/60 border-t border-white/5">
+      {/* Operational Workflow Steps */}
+      <section className="py-20 bg-[#070d14] border-t border-white/[0.06]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-2">
-              Smooth Execution
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 block mb-1">
+              Standard Operating Procedure
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              How Krishi Udaan Deploys to Your Field
+              How Drone Spraying Works
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {workflowSteps.map((wf, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {workflowSteps.map((ws, i) => (
               <div 
-                key={idx}
-                className="p-6 rounded-3xl bg-slate-900 border border-white/5 relative flex flex-col justify-between hover:border-emerald-500/40 transition-colors"
+                key={i}
+                className="p-6 rounded-2xl bg-[#0e1722] border border-white/[0.06] flex flex-col justify-between"
               >
                 <div>
-                  <span className="text-3xl font-black text-emerald-500/30 block mb-3">
-                    {wf.step}
-                  </span>
-                  <h3 className="text-base font-bold text-white mb-2">
-                    {wf.title}
-                  </h3>
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    {wf.desc}
+                  <div className="text-2xl font-black text-amber-400 mb-3 font-mono">
+                    {ws.step}
+                  </div>
+                  <h4 className="text-base font-bold text-white mb-2">
+                    {ws.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 leading-relaxed">
+                    {ws.desc}
                   </p>
                 </div>
               </div>
             ))}
           </div>
 
-        </div>
-      </section>
-
-
-      {/* Direct Booking CTA */}
-      <section className="py-16 bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-950 border-t border-emerald-500/30 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-3xl font-extrabold text-white">
-            Ready to Protect Your Crops with 1-Acre in 7 Minutes?
-          </h2>
-          <p className="mt-2 text-sm text-slate-300">
-            Contact our operations command center in Bhopal for immediate fleet dispatch or seasonal booking.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              to="/contact"
-              className="px-6 py-3.5 rounded-xl font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 text-xs uppercase tracking-wider shadow-lg transition-all"
-            >
-              Book Drone Spraying
-            </Link>
-            <a
-              href="tel:+919755675433"
-              className="px-6 py-3.5 rounded-xl font-semibold text-white bg-white/10 hover:bg-white/20 text-xs transition-colors"
-            >
-              Call +91 97556 75433
-            </a>
-          </div>
         </div>
       </section>
 
