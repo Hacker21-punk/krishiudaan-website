@@ -11,11 +11,51 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const translations: Record<string, Record<Language, string>> = {
-  // Common
+  // Navigation
+  'Home': {
+    English: 'Home',
+    Hindi: 'मुख्य पृष्ठ',
+    Japanese: 'ホーム'
+  },
+  'About Us': {
+    English: 'About Us',
+    Hindi: 'हमारे बारे में',
+    Japanese: '会社概要'
+  },
+  'Advantages': {
+    English: 'Advantages',
+    Hindi: 'लाभ एवं विशेषताएं',
+    Japanese: 'ドローン散布の利点'
+  },
+  'Services': {
+    English: 'Services',
+    Hindi: 'हमारी सेवाएं',
+    Japanese: 'サービス'
+  },
+  'Gallery': {
+    English: 'Field Gallery',
+    Hindi: 'गैलरी',
+    Japanese: 'ギャラリー'
+  },
+  'Contact': {
+    English: 'Contact',
+    Hindi: 'संपर्क',
+    Japanese: 'お問い合わせ'
+  },
+  'Book Spraying': {
+    English: 'Book Drone Spraying',
+    Hindi: 'छिड़काव बुक करें',
+    Japanese: 'スプレー予約'
+  },
   'Select Language': {
     English: 'Select Language',
     Hindi: 'भाषा चुनें',
     Japanese: '言語を選択'
+  },
+  'Language': {
+    English: 'Language',
+    Hindi: 'भाषा',
+    Japanese: '言語'
   },
   'Contact us': {
     English: 'Contact us',
@@ -78,6 +118,31 @@ const translations: Record<string, Record<Language, string>> = {
     English: 'Over a Decade in Innovation, and Our Flight Has Just Begun',
     Hindi: 'नवाचार में एक दशक से अधिक, और हमारी उड़ान अभी शुरू हुई है',
     Japanese: 'イノベーションの10年以上、そして私たちの飛行は始まったばかりです'
+  },
+  'Why Choose us?': {
+    English: 'Why Choose Us?',
+    Hindi: 'हमें क्यों चुनें?',
+    Japanese: '選ばれる理由'
+  },
+  'Advantages of Drone Spraying': {
+    English: 'Advantages of Drone Spraying',
+    Hindi: 'ड्रोन छिड़काव के फायदे',
+    Japanese: 'ドローン散布のメリット'
+  },
+  'Unlocking Agriculture\'s Potential': {
+    English: "Unlocking Agriculture's Potential",
+    Hindi: 'कृषि की असीम संभावनाओं को उजागर करना',
+    Japanese: '農業の可能性を解き放つ'
+  },
+  'Bringing Drones to': {
+    English: 'Bringing Drones to',
+    Hindi: 'ड्रोन पहुंचा रहे हैं',
+    Japanese: 'ドローンを届ける'
+  },
+  'Every Corner of India': {
+    English: 'Every Corner of India',
+    Hindi: 'भारत के कोने-कोने में',
+    Japanese: 'インド全土へ'
   }
 };
 
